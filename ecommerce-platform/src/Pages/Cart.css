@@ -73,6 +73,7 @@ table tr td{
     /* border: 1px solid rgb(164, 160, 160); */
     height: 170px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
 }
 
 .Cart_checkout_items .checkout{
