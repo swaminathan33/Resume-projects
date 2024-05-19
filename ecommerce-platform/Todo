@@ -1,0 +1,23 @@
+👉Product Listing: Display products with names, images, and prices.
+
+👉Product Details: Show detailed info about selected products.
+
+✔ 👉Shopping Cart: Allow adding/removing items and display total. @done(24-05-19 04:08)
+
+☐ 👉Checkout: Guide users through a simple checkout process.
+
+☐ 👉User Authentication: Sign up/login, view order history.
+
+☐ 👉Responsive Design: Ensure the website looks good on all devices.
+
+👉Search: Include a search bar for product discovery.
+
+👉Navigation: Provide easy access to different sections.
+
+👉Error Handling: Display helpful messages for user errors.
+
+☐ 👉Backend Integration: Connect frontend to a backend server.
+
+👉Performance Optimization: Make sure the website loads quickly.
+
+Design 👉 https://websitedemos.net/earth-store-02/

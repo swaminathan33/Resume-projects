@@ -1,0 +1,33 @@
+.Product{
+    width: 250px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    padding: 15px 5px 15px 5px;
+}
+
+.Product_image{
+    width: 200px;
+    height: 200px;
+    padding-bottom: 10px;
+}
+
+.Product_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buy_button{
+    border: none;
+    padding: 10px;
+    background-color: rgb(0, 51, 255);
+    color: white;
+    font-weight: bold;
+    border-radius: 13px;
+    min-width: 70px;
+    cursor: pointer;
+}
