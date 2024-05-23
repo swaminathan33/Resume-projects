@@ -1,0 +1,45 @@
+☐ User Authentication:
+    Sign up
+    Login
+    Password reset
+☐ User Profiles:
+    
+    Profile picture
+    Bio
+    Contact information
+☐ News Feed:
+    
+    Display posts from users
+    Infinite scroll or pagination
+☐ Post Creation:
+    Text posts
+    Image and video uploads
+    Hashtags
+☐ Interactions:    
+    Like posts
+    Comment on posts
+    Share posts
+☐ Messaging:
+    
+    Direct messages
+    Group chats
+☐ Notifications:
+    
+    New likes, comments, followers
+    Mentions
+☐ Search Functionality:
+    
+    Search for users
+    Search for posts by hashtags
+☐ Friend/Follower System:
+    
+    Send/accept friend requests
+    Follow/unfollow users
+☐ Privacy Settings:
+    
+    Control who can see posts
+    Control who can send messages
+☐ Basic Content Moderation: 
+    
+    Report inappropriate content
+    Block/unblock users
