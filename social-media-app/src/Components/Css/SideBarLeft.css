@@ -1,0 +1,25 @@
+.sidebarleft{
+    background-color: #f7f5f5;
+    height: 70vh;
+    padding: 20px;
+    position: sticky;
+    top: 50px;
+}
+
+.sidebarleft ul li{
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.sidebarleft .show_more{
+    background-color: #dcd9d9;
+    padding: 5px 25px 5px 25px;
+    border-radius: 6px;
+}
+
+.sidebarleft .show_more button{
+    background-color: transparent;
+    border: none;
+}

@@ -1,0 +1,54 @@
+.profile .sidebarleft{
+    width: 46vh;
+}
+
+.profile{
+    display: flex;
+}
+
+.profile .banner_image .beach{
+    width: 165vh;
+    height: 45vh;
+    border: 1px soolid black;
+}
+
+.profile .contents{
+    display: flex;
+}
+
+.profile .online_friends ul{
+    display: flex;
+    gap: 40px;
+}
+
+.profile .online_friends ul li img{
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid rgb(94, 94, 95);
+}
+
+.profile .online_friends ul li{
+    list-style-type: none;
+}
+
+.profile .infos .user_info{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile .infos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile .online_friends ul{
+    margin-top: 20px;
+}
+
+.profile .contents{
+    margin-top: 120px;
+}

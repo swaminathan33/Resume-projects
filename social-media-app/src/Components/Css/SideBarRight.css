@@ -1,0 +1,29 @@
+.sidebarright .birthdays{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.sidebarright .advertisement img{
+    width: 62vh;
+    height: 62vh;
+    border-radius: 10px;
+    margin: 25px 0px 25px 0px;
+}
+
+.sidebarright .friends ul li img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    /* border: 2px solid #0c4b9e; */
+}
+
+.sidebarright .friends ul li{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+    margin-top: 10px;
+}

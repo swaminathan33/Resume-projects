@@ -1,0 +1,22 @@
+.photocircle img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.photocircle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    position: absolute;
+    top: 230px;
+    left: 720px;
+}
+
+.photocircle b{
+    font-size: 20px;
+}

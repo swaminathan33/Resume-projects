@@ -1,0 +1,44 @@
+.post{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 10px;
+    height: 100%;
+    padding: 5px 5px 5px 15px;
+    border-radius: 10px;
+}
+
+.post .img img{
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    /* border: 2px solid #0c4b9e; */
+}
+
+.post .top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.post .top div{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.post .top .name{
+    font-weight: bold;
+}
+.post .text{
+    margin-bottom: 10px;
+    
+}
+.post .top .time{
+    color: rgb(48, 48, 48);
+}
+.bottom img{
+    width: 89vh;
+    border-radius: 10px;
+    margin: 20px 0px 0px 0px;
+}
