@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import "./Css/Profile.css";
 import SideBarLeft from "../Components/SideBarLeft";
@@ -6,8 +6,21 @@ import Beach from "../assets/beach.jpg";
 import CreatePost from "../Components/CreatePost";
 import Feed from "../Components/Feed";
 import PhotoCircle from "../Components/PhotoCircle";
+import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../Components/contexts/AuthContext";
 
 const Profile = () => {
+  const {logOut} = useAuthContext();
+  const navigate = useNavigate();
+  const handleLogOut = () =>{
+    try{
+      logOut()
+      navigate('/login')
+    } catch(err){
+      console.log(err)
+    }
+  }
+
   const [friends, setFriends] = useState([
     {
       name: "Jackson Raj",
@@ -58,6 +71,9 @@ const Profile = () => {
                   })}
                 </ul>
               </div>
+                  <div className="logout_button">
+                  <button onClick={handleLogOut}>Log Out</button>
+                  </div>
             </div>
           </div>
         </div>

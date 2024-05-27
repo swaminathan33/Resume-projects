@@ -52,3 +52,24 @@
 .profile .contents{
     margin-top: 120px;
 }
+
+.logout_button{
+
+}
+
+.logout_button button{
+    width: 100px;
+    border-radius: 10px;
+    height: 25px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.logout_button button:hover{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
