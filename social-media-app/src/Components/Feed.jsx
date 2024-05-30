@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Post from './Post'
+import { useContentContext } from './contexts/contentContext'
 
 const Feed = () => {
+  const {post} = useContentContext();
+
   const [feedData, setFeedData] = useState([
     {
       text:'This is my first post #first post',
@@ -35,6 +38,21 @@ const Feed = () => {
     },
   ])
 
+  useEffect(() => {
+    
+    setFeedData((f) => {
+      if(post == ''){
+        return f
+      }
+      else{
+        return [...f, {
+          text: post,
+          image: null,
+          time: '1 min ago'
+        }]
+      }
+    })
+  }, [post])
   return (
     <div className='feed'>
       {

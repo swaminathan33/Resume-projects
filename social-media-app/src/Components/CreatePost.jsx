@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Css/CreatePost.css'
 import profile from '../assets/profile.jpg'
 import { IoMdPhotos } from "react-icons/io";
 import { FaSmile, FaTags } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { useContentContext } from './contexts/contentContext';
 
 const CreatePost = () => {
+  const [postContent, setPostContent] = useState('')
+  const {post, setPost} = useContentContext();
+  const handleSubmit = () =>{
+    setPost(postContent)
+    setPostContent('')
+  }
+
   return (
     <div className='create_post'>
       <div className="top">
@@ -13,7 +21,7 @@ const CreatePost = () => {
           <img src={profile} alt="" />
         </div>
         <div className="text_box">
-          <input type="text" placeholder="What's in your mind ?" />
+          <input type="text" placeholder="What's in your mind ?" value={postContent} onChange={(e) => setPostContent(e.target.value)} />
         </div>
       </div>
       <div className="line"></div>
@@ -37,7 +45,7 @@ const CreatePost = () => {
           </li>
           <li>
             <div className="share_button">
-            <button>Share</button>
+            <button onClick={handleSubmit}>Share</button>
             </div>
           </li>
         </ul>
