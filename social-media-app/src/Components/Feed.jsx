@@ -58,7 +58,7 @@ const Feed = () => {
       {
         feedData.map((data, index) => {
           return <Post key={index} name={'sophia jackson'} time={data.time} text={data.text} image={data.image}/>
-        })
+        }).reverse()
       }
     </div>
   )
