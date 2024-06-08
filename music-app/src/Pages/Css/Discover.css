@@ -1,0 +1,29 @@
+.discover{
+    color: white;
+    background-color: #14252f;
+    padding: 30px ;
+}
+
+.discover .d-title{
+    font-size: 25px;
+    font-weight: 20px;
+    margin-bottom: 10px;
+}
+
+.discover .d-description{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(122, 121, 121);
+}
+
+.discover .discover-feed .new-releases{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.discover .discover-feed .artist-albums{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 54px;
+}

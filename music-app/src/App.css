@@ -1,0 +1,31 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.app{
+    display: grid;
+    grid-template-areas: 
+        'leftbar nav right'
+        'leftbar feed right'
+    ;
+    grid-template-columns: 45vh 120vh 48vh;
+    grid-template-rows: 17vh;
+}
+
+.leftsidebar{
+    grid-area: leftbar;
+}
+
+.navbar{
+    grid-area: nav;
+}
+
+.rightsidebar{
+    grid-area: right;
+}
+
+.discover{
+    grid-area: feed;
+} */

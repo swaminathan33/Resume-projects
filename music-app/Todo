@@ -1,0 +1,30 @@
+    ☐ User Authentication:
+
+    Sign in, sign up, and password reset functionalities.
+    ☐ Playback Controls:
+    
+    Play, pause, skip, and loop songs with ease.
+    ☐ Volume Control:
+    
+    Adjust volume, mute/unmute while enjoying your music.
+    ☐ Search Functionality:
+    
+    Search for songs by song name, artist name, or album name.
+    ☐ Like Songs:
+    
+    Like your favorite songs to build a personalized collection.
+    ☐ Playlist Creation:
+    
+    Create and manage playlists tailored to your taste.
+    ☐ Song Details:
+    
+    Explore song details, including cover image, singer, and album information.
+    ☐ Persistent Music Player:
+    
+    A music player component accessible across all pages, allowing uninterrupted music playback.
+    ☐ Cross-Page Playback:
+    
+    Keep the music playing while navigating through different sections of the app.
+    ☐ Theme Switcher:
+    
+    Fully customizable theme switcher to personalize your visual experience.

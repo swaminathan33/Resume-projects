@@ -1,0 +1,30 @@
+.songcardsmall{
+    display: flex;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.songcardsmall:hover{
+    background-color: #0a171f;
+}
+
+.songcardsmall img{
+    width: 45px;
+    height: 45px;
+}
+
+.songcardsmall .content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 15px;
+}
+
+.songcardsmall .content .title{
+    font-size: 15px;
+}
+
+.songcardsmall .content .artist{
+    color: rgb(118, 112, 112);
+}

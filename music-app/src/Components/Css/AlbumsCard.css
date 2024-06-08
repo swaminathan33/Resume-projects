@@ -1,0 +1,21 @@
+.albums_card{
+    width: 100px;
+    /* height: 180px; */
+    padding: 10px;
+    border-radius: 5x;
+    background-color: #192a35;
+}
+
+.albums_card:hover{
+    background-color: #0b151b;
+}
+
+.albums_card .content{
+    text-align: center;
+}
+
+.albums_card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

@@ -1,0 +1,60 @@
+.rightsidebar{
+    background-color: #18303d;
+    /* width: 55vh; */
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 15px;
+    /* position: -webkit-sticky; */
+    position: sticky;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rightsidebar .title{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rightsidebar .content button{
+    background-color: #253e4d;
+    color: white;
+    border: none;
+    margin: 10px 10px 10px 0px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.rightsidebar .content button:hover{
+    background-color: #152731;
+}
+
+.rightsidebar .content{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.rightsidebar .links ul li{
+    list-style-type: none;
+}
+
+.rightsidebar .links ul{
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+.rightsidebar .links ul li:hover{
+    color: #009680;
+    cursor: pointer;
+}
+
+.rightsidebar .copyright{
+    color: rgb(167, 163, 163);
+}
+
