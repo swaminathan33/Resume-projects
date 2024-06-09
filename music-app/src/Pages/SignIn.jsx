@@ -18,6 +18,7 @@ const SignIn = () => {
       console.log(token)
       navigate('/')
     }
+    console.log(token)
   }, [])
 
   const logout = () =>{

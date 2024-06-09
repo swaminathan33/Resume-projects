@@ -1,6 +1,7 @@
 export const authEndpoint = 'https://accounts.spotify.com/authorize'
 // const redirectUrl = 'http://localhost:5173/signin'
-const redirectUrl = 'https://music-app-11.netlify.app/signin'
+// const redirectUrl = 'https://music-app-11.netlify.app/signin'
+const redirectUrl = 'https://music-app-11.netlify.app/callback'
 // const redirectUrl = 'https://localhost:3000/callback/'
 const clientId = 'de8618a5edbc4f39a21bfd32c66040f2'
 
