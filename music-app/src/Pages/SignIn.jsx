@@ -7,6 +7,7 @@ const SignIn = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
+    console.log('inside useeffect')
     const hash = window.location.hash
     let token = window.localStorage.getItem('token')
     if(!token && hash){
@@ -14,6 +15,7 @@ const SignIn = () => {
       window.location.hash = ''
       window.localStorage.setItem('token',token)
       setToken(token)
+      console.log(token)
       navigate('/')
     }
   }, [])
