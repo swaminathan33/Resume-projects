@@ -1,0 +1,65 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px 0px 50px;
+}
+
+.navbar .pages{
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .pages .list ul{
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar .pages .list ul a{
+    text-decoration: none;
+}
+
+.navbar .pages .list ul a:hover{
+    text-decoration: underline;
+}
+
+.navbar .pages .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .pages .buttons button{
+    border: 1px solid black;
+    padding: 9px 12px 9px 12px;
+    border-radius: 5px;
+}
+
+.navbar .pages .buttons .login button{
+    background-color: transparent;
+}   
+
+.navbar .pages .buttons .register button{
+    background-color: #6A38C2;
+    color: white;
+    border: none;
+}   
+
+.navbar .logo{
+    font-size: 23px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #6A38C2;
+    font-weight: 600;
+}
+
+.navbar .logo a{
+    text-decoration: none;
+}
+
+.navbar .buttons button:hover{
+    cursor: pointer;
+}

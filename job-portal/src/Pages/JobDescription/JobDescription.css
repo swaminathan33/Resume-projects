@@ -1,0 +1,136 @@
+.jobdescription {
+    /* border: 1px solid black; */
+    margin: 50px 510px 0px 110px;
+}
+
+.jobdescription .top{
+    display: flex;
+}
+
+.jobdescription .top .img img{
+    width: 40px;
+    height: 40px;
+}
+
+.jobdescription .top .img{
+    border: 1px solid rgb(206, 206, 206);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.jobdescription .top .top-inside{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.jobdescription .top .top-inside .job-title{
+    font-weight: 700;
+}
+
+.jobdescription .top .top-inside .position{
+    color: #004DF9;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #F3F7FF;
+    margin: 5px 10px 5px 0px;
+        font-size: 10px;
+    font-weight: 700;
+}
+
+.jobdescription .top .top-inside .time{
+    color: #FB7C49;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: FFF0EA; 
+    margin: 5px 10px 5px 0px;
+        font-size: 10px;
+    font-weight: 700;
+}
+
+.jobdescription .top .top-inside .years{
+    color: #07932C;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #EDFDF3;
+    margin: 5px 10px 5px 0px;
+        font-size: 10px;
+    font-weight: 700;
+}
+
+.jobdescription .top .top-inside .salary{
+    color: #28BAB2;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #E1FFFD;
+    margin: 3px 10px 0px 0px;
+        font-size: 10px;
+    font-weight: 700;
+
+}
+
+.jobdescription .top .top-inside .wfo{
+    color: #FF1616;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #FFF2F2;
+    margin: 3px 10px 0px 0px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.jobdescription .top .apply button{
+    background-color: #6A38C2;
+    font-size: 11px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 7px 12px 7px 12px;
+}
+
+.jobdescription .top .top-inside{
+    margin-right: 180px;
+}
+
+.jobdescription .bottom{
+    margin-top: 20px;
+}
+
+.jobdescription .bottom h5{
+    border-bottom: 1px solid rgb(110, 108, 108);
+    padding-bottom: 6px;
+}
+
+.jobdescription .bottom h5:after {
+    content: '';
+    display: block;
+    border-bottom: 2px solid #004DF9;
+    margin-bottom: -7.4px;
+    margin-top: 5px;
+    max-width: 140px;
+  }
+
+.jobdescription .bottom p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(35, 33, 33);
+}
+
+.jobdescription .bottom h4{
+    margin-bottom: 7px;
+}
+
+.jobdescription .bottom ul{
+    margin-left: 30px;
+    color: rgb(35, 33, 33);
+}
+

@@ -1,0 +1,16 @@
+.roundbutton{
+    margin: 1vh 0px 1vh 0px;
+}
+
+.roundbutton button{    
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 10px 15px 10px 15px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.roundbutton .blue{
+    border: 1px solid #6A38C2;
+    color: #6A38C2;
+}

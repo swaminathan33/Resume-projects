@@ -1,0 +1,41 @@
+.footer{
+    display: flex;
+    margin-top: 100px;
+    padding: 70px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+}
+
+.footer .top{
+    width: 250px;
+}
+
+.footer table thead th{
+    gap: 100px;
+}
+
+.footer .bottom{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .bottom ul{
+    list-style-type:none;
+}
+
+.footer .bottom ul li{
+    margin-top: 10px;
+}
+
+.footer .top .logo{
+    font-size: 25px;
+}
+
+.footer .top .logo .job{
+    color: #6A38C2;
+}
+
+.footer .top .logo .hunt{
+    color: #ff8000;
+}

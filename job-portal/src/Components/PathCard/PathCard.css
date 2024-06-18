@@ -1,0 +1,19 @@
+.pathcard{
+    /* border: 1px solid black; */
+    width: 240px;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #efeef3;
+}
+
+.pathcard .pathcard_title{
+    font-weight: 700;
+}
+
+.pathcard .pathcard_para{
+    font-size: 14px;
+}

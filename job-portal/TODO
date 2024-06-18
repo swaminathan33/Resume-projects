@@ -1,0 +1,14 @@
+Link -> https://dribbble.com/shots/20254545-Job-Portal-Website
+
+☐ add "countless job oppourtunities waiting for you" line in home page 
+☐ create simple footer 
+☐ mobile responsive 
+☐ change website total text font
+☐ list some dummy job datas 
+☐ add simple filter functionality 
+☐ simple apply now form pop up ( after submitting form -> successfully applied msg & if return to jobs button)
+☐ if possible add some animations / hovering effects because website looks dummy
+☐ if possible login & regiter functionality using firebase
+    1. firebase auth file
+    2. create a auth context
+☐ Give some spacing in home page rows 

@@ -1,0 +1,15 @@
+.jobs{
+    background-color: #F1EAFF;
+    height: 100%;
+}
+
+.jobs-content{
+    display: flex;
+}
+
+.jobs .jobs-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
