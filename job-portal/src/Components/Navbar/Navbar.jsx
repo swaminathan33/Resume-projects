@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className="logo">
-        <Link to={'/'}>Job-Hunt</Link> 
+        <Link to={'/'}>Job-Huntz</Link> 
       </div>
       <div className="pages">
         <div className="list">

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className="top">
-        <div className="logo"><span className="job">Job</span><span className="hunt">Hunt</span></div>
+        <div className="logo"><span className="job">Job</span><span className="hunt">Huntz</span></div>
         <div className="para">
         The quickest and most effective way to get hired by the top firm working in your career interest areas.
         </div>
