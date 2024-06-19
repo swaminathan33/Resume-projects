@@ -10,7 +10,8 @@ const FilterCard = () => {
     <div className='filtercard'>
       <div className="top">
         <div>Filter Jobs</div>
-        <button>Clear All</button>
+        <button className='name_button'>Clear All</button>
+        <button className='icon_button'>❌</button>
       </div>
       <h4>Company Type</h4>
       <ul>

@@ -134,3 +134,15 @@
     color: rgb(35, 33, 33);
 }
 
+
+@media screen and (max-width:600px) {
+    .jobdescription {
+        margin: 50px 40px 0px 40px;
+    }
+
+    .jobdescription .top .img{
+        display: none;
+    }
+
+    .jobdescription .top
+}

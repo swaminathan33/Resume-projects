@@ -34,6 +34,9 @@ const JobDescription = () => {
         <div className="job-title">
           <div className="title">{job[0].job}</div>
         </div>
+        <div className="job-company">
+          {job[0].company}
+        </div>
         <div className="list-buttons">
           <button className="position">{job[0].positions}</button>
           <button className="time">Full Time</button>

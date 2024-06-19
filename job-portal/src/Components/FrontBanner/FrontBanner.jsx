@@ -12,7 +12,7 @@ const FrontBanner = () => {
             Search, Apply & <br /> Get Your <span>Dream Job</span>
         </div>
         <div className="para">
-            Start Your hunt for the best, life-changing career oppourtunities from here in your <br />
+            Start Your hunt for the best, life-changing career oppourtunities from here in your 
             selected areas convenietly and get hired quickly.
         </div>
         <div className="buttons">

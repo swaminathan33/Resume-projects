@@ -39,3 +39,13 @@
 .footer .top .logo .hunt{
     color: #ff8000;
 }
+
+@media screen and (max-width:600px) {
+    .footer .top{
+        display: none;
+    }
+    .footer .bottom{
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -57,3 +57,35 @@
     color: #6A38C2;
 }
 
+
+
+@media screen and (max-width:600px) {
+    .path-column .path-cards{
+        width: 600px;
+        flex-wrap: wrap;    
+        justify-content: center;
+
+    }
+
+    .path-column .para{
+        width: 450px;
+    }
+
+    .home .jobs-column-1{
+        width: 600px;
+        flex-wrap: wrap;
+    }
+    .home .jobs-column-2{
+        display: none;
+    }
+
+    .path-column{
+        margin-top: 15vh;
+    }
+
+    .jobs-column-3{
+        font-size: 15px;
+        margin: 2vh 0 0 0;
+    }
+    
+}

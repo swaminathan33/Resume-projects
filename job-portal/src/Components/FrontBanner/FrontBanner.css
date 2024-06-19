@@ -23,6 +23,7 @@
 }
 
 .frontbanner .para{
+    width: 650px;
     text-align: center;
 }
 
@@ -52,4 +53,14 @@
 .frontbanner .buttons .browse button a{
     color: white;
     text-decoration: none;
+}
+
+@media screen and (max-width:600px) {
+    .frontbanner .title{
+        font-size: 50px;
+    }
+
+    .frontbanner .para{
+        width: 470px;
+    }
 }

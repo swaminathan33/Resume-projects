@@ -37,3 +37,24 @@
     padding: 5px;
     outline: none;
 }
+
+.filtercard .top .icon_button{
+    display: none;
+}
+
+.filtercard .top .name_button{
+    display: block;
+}
+
+
+@media screen and (max-width:600px) {
+    .filtercard .top .name_button{
+        display: none;
+    }
+
+    .filtercard .top .icon_button{
+        display: block;
+        border: none;
+        font-size: 10px;
+    }
+}

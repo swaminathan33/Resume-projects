@@ -17,3 +17,24 @@
 .pathcard .pathcard_para{
     font-size: 14px;
 }
+
+@media screen and (max-width:600px) {
+    .pathcard{
+        width: 200px;
+    }
+
+    .pathcard .pathcard_para{
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .pathcard .pathcard_title{
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .pathcard .icon{
+        /* display: none; */
+        text-align: center;
+    }
+}

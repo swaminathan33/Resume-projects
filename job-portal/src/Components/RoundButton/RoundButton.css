@@ -14,3 +14,10 @@
     border: 1px solid #6A38C2;
     color: #6A38C2;
 }
+
+@media screen and (max-width:600px) {
+    .roundbutton button{
+        font-size: 11px;
+    }
+
+}
