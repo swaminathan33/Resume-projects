@@ -33,3 +33,9 @@
 .login_page .button button:hover{
     background-color: #6966fb;
 }
+
+@media screen and (max-width:600px) {
+    .login_page form{
+        padding: 20px;
+    }
+}

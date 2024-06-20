@@ -28,6 +28,7 @@
     margin-top: 10px;
 }
 
+
 .footer .top .logo{
     font-size: 25px;
 }
@@ -47,5 +48,13 @@
     .footer .bottom{
         width: 100%;
         text-align: center;
+    }
+
+    .footer .quick{
+        display: none;
+    }
+
+    .footer{
+        padding: 0px 30px 20px 30px;
     }
 }
