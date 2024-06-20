@@ -137,10 +137,20 @@
 
 @media screen and (max-width:600px) {
     .jobdescription {
-        margin: 50px 40px 0px 40px;
+        margin: 50px 40px 50px 40px;
+        font-size: 13px;
     }
 
     .jobdescription .top .img{
         display: none;
+    }
+    
+    .jobdescription .top .top-inside{
+        margin-right: 0px;
+    }
+
+    .jobdescription .top .top-inside{
+        margin-left: 0px;
+
     }
 }
