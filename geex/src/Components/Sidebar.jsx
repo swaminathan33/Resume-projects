@@ -8,7 +8,7 @@ import { BsWindow } from "react-icons/bs";
 
 const Sidebar = () => {
   return (
-    <div className="col-span-2">
+    <div className="col-span-2 h-screen sticky top-0">
       <div className="bg-nav-bg shadow-sm m-4 pl-7 rounded-3xl">
         <div className="logo pt-10 w-4/6">
           <img src={logo} alt="" />
@@ -37,7 +37,7 @@ const Sidebar = () => {
             </li>
           </ul>
         </div>
-        <div className="footer pt-7 pb-5">
+        <div className="footer pt-20 pb-5">
           <b className="text-gray-700 text-sm">
             {" "}
             Geex Modern Dashboard <br />
