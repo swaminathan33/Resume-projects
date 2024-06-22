@@ -10,6 +10,8 @@ export default {
         'home-bg':'#f3f2f7',
         'nav-bg':'#f9f9fb',
         'customise-btn':'#ECEAF3',
+        'btn-strong':'#ab54db',
+        'btn-light':"#e8dbf3",
       }
     },
   },

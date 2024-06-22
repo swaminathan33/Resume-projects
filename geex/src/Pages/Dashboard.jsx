@@ -18,7 +18,7 @@ const Dashboard = () => {
       <Sidebar />
 
       <div className="col-span-6">
-        <Navbar />
+        <Navbar page={"Dashboard"} />
 
         <div className="Dashboard mr-6 grid grid-cols-4">
           <div className="middle_bar col-span-3">

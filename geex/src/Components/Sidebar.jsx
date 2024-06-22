@@ -25,8 +25,19 @@ const Sidebar = () => {
             </li>
             <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
               <LuLayoutGrid fontSize={"28px"} className="text-gray-400" />
-              <div className="text-gray-700 text-lg">App</div>
+              <div className="text-gray-700 text-lg">
+                <div>App</div>
+              </div>
             </li>
+            {/* 
+            <li className="bg-slate-white shadow-xl mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+              <div>
+                <ul>
+                  <li>asdf</li>
+                </ul>
+              </div>
+            </li> */}
+
             <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
               <IoLayersOutline fontSize={"28px"} className="text-gray-400" />
               <div className="text-gray-700 text-lg">Features</div>

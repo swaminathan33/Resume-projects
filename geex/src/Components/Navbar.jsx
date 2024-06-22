@@ -4,11 +4,11 @@ import { TbMessage } from "react-icons/tb";
 import { FaRegBell } from "react-icons/fa";
 import profile from "../Assets/profile.svg";
 
-const Navbar = () => {
+const Navbar = ({ page }) => {
   return (
     <div className=" flex justify-between mt-4 mb-4 mr-4 ml-3">
       <div>
-        <h1 className="text-3xl font-medium text-gray-700">Dashboard</h1>
+        <h1 className="text-3xl font-medium text-gray-700">{page}</h1>
         <p className="mt-3 text-md text-gray-600">
           Welcome to Geex Modern Admin Dashboard
         </p>
