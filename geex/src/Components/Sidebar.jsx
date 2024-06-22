@@ -5,6 +5,7 @@ import { LuLayout } from "react-icons/lu";
 import { LuLayoutGrid } from "react-icons/lu";
 import { IoLayersOutline } from "react-icons/io5";
 import { BsWindow } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -15,20 +16,26 @@ const Sidebar = () => {
         </div>
         <div className="pages text-xl pt-10">
           <ul className="">
-            <li className="mt-6 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
-              <AiOutlineHome fontSize={"28px"} className="text-gray-400 " />
-              <div className="text-gray-700 text-lg">Demo</div>
-            </li>
+            <Link to={"/"}>
+              <li className="mt-6 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+                <AiOutlineHome fontSize={"28px"} className="text-gray-400 " />
+                <div className="text-gray-700 text-lg">
+                  <Link to={"/"}>Demo</Link>
+                </div>
+              </li>
+            </Link>
             <li className="mt-6 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
               <LuLayout fontSize={"28px"} className="text-gray-400" />
               <div className="text-gray-700 text-lg">Layout</div>
             </li>
-            <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
-              <LuLayoutGrid fontSize={"28px"} className="text-gray-400" />
-              <div className="text-gray-700 text-lg">
-                <div>App</div>
-              </div>
-            </li>
+            <Link to={"/todo"}>
+              <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+                <LuLayoutGrid fontSize={"28px"} className="text-gray-400" />
+                <div className="text-gray-700 text-lg">
+                  <div>App</div>
+                </div>
+              </li>
+            </Link>
             {/* 
             <li className="bg-slate-white shadow-xl mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
               <div>
