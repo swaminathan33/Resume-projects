@@ -9,18 +9,22 @@ import { IoLockClosedOutline } from "react-icons/io5";
 import { BsLayoutTextWindow } from "react-icons/bs";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
-
+import { motion } from "framer-motion";
 const Home = () => {
   return (
-    <div className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-700 py-5 px-24 ">
+    // <div className="bg-gradient-to-r from-fuchsia-950 via-fuchsia-500 to-fuchsia-950 py-5 px-24 ">
+    <div className="bg-fuchsia-950 py-5 px-24 ">
       <Navbar />
       <div className="flex justify-center align-middle text-center">
+        <div className="absolute py-56 animate-blob bg-gradient-to-t from-fuchsia-950 to-fuchsia-600 w-4/6 h-full blur-3xl rounded-full"></div>
         <FrontBanner />
       </div>
+
+      <div className="absolute py-56 animate-blob bg-gradient-to-t right-5 from-fuchsia-950 to-fuchsia-600 w-4/6 h-5/6 blur-3xl rounded-full"></div>
       <ScrollBar />
 
-      <div className="row1 text-textColor my-40 mb-60">
-        <ScrollParallax>
+      <div className="row1 text-textColor relative my-40 mb-60">
+        <>
           <p className="mb-2">The Security First Platform</p>
           <h2 className="text-4xl font-bold mb-3">
             Simplify your security with <br /> authentication services
@@ -40,10 +44,11 @@ const Home = () => {
               Adaptable authentication
             </button>
           </div>
-        </ScrollParallax>
+        </>
       </div>
 
-      <div className="row2 text-center text-textColor">
+      <div className="absolute py-50 animate-blob bg-gradient-to-t -left-20 from-fuchsia-950 to-fuchsia-600 w-3/6 h-5/6 blur-3xl rounded-full"></div>
+      <motion.div className="row2 pb-52 relative text-center text-textColor">
         <div className="title text-5xl text-white font-bold">
           Faster.Smarter.
         </div>
@@ -52,11 +57,12 @@ const Home = () => {
           alteration in some form, <br /> by injected humour, or randomised
           words which don't look even slightly believable.
         </div>
-      </div>
+      </motion.div>
+
       <div>
-        <ul className="flex justify-center gap-20 flex-wrap">
-          <li className=" w-72">
-            <div className="title text-white flex items-center gap-2">
+        <ul className="flex relative justify-center gap-20 flex-wrap">
+          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
+            <div className="title text-white flex items-center gap-2 ">
               <FaRegHeart /> Filters
             </div>
             <p className="text-textColor text-sm">
@@ -65,7 +71,7 @@ const Home = () => {
             </p>
           </li>
 
-          <li className=" w-72">
+          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
             <div className="title text-white flex items-center gap-2">
               {" "}
               <FiLink /> Configurable
@@ -75,7 +81,7 @@ const Home = () => {
               privacy and security.
             </p>
           </li>
-          <li className=" w-72">
+          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
             <div className="title text-white flex items-center gap-2">
               {" "}
               <HiMiniCursorArrowRipple /> Adapdable
@@ -85,7 +91,7 @@ const Home = () => {
               privacy and security.
             </p>
           </li>
-          <li className=" w-72">
+          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
             <div className="title text-white flex items-center gap-2">
               {" "}
               <IoLockClosedOutline /> Authorization
@@ -95,7 +101,7 @@ const Home = () => {
               privacy and security.
             </p>
           </li>
-          <li className=" w-72">
+          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
             <div className="title text-white flex items-center gap-2">
               {" "}
               <BsLayoutTextWindow /> Management
@@ -105,7 +111,7 @@ const Home = () => {
               privacy and security.
             </p>
           </li>
-          <li className=" w-72">
+          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
             <div className="title text-white flex items-center gap-2">
               {" "}
               <FaRegEyeSlash /> Building

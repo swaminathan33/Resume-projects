@@ -17,12 +17,19 @@ const Dashboard = () => {
     <div className="grid grid-cols-8">
       <Sidebar />
 
-      <div className="col-span-6">
+      <div className="col-span-6 max-sm:m-4">
         <Navbar page={"Dashboard"} />
 
-        <div className="Dashboard mr-6 grid grid-cols-4">
+        <div className="title hidden max-sm:block">
+          <h1 className="text-3xl font-medium text-gray-700">Dashboard</h1>
+          <p className="mt-3 text-md text-gray-600">
+            Welcome to Geex Modern Admin Dashboard
+          </p>
+        </div>
+
+        <div className="Dashboard mr-6 grid grid-cols-4 max-sm:flex flex-col">
           <div className="middle_bar col-span-3">
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-3 max-sm:flex flex-col">
               {images.map((i) => {
                 return <FrontSmallCard image={i} />;
               })}

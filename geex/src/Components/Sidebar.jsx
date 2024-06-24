@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="col-span-2 h-screen sticky top-0">
+    <div className="col-span-2 h-screen sticky top-0 max-sm:hidden">
       <div className="bg-nav-bg shadow-sm m-4 pl-7 rounded-3xl">
         <div className="logo pt-10 w-4/6">
           <img src={logo} alt="" />

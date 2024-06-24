@@ -1,9 +1,10 @@
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
+import "./Components.css";
 
 const ScrollBar = () => {
   return (
-    <div className="flex  justify-center gap-5 overflow-hidden w-100">
+    <div className="scroll flex  justify-center gap-5 overflow-hidden w-100 ">
       <div className="flex gap-10  animate-loop-scroll">
         <img
           loading="lazy"
