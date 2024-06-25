@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from "react";
 const ContentContext = createContext();
 
 const ContentProvider = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <ContentContext.Provider value={{ sidebarOpen, setSidebarOpen }}>
