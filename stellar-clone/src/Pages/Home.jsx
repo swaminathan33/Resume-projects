@@ -16,11 +16,11 @@ const Home = () => {
     <div className="bg-fuchsia-950 py-5 px-24 ">
       <Navbar />
       <div className="flex justify-center align-middle text-center">
-        <div className="absolute py-56 animate-blob bg-gradient-to-t from-fuchsia-950 to-fuchsia-600 w-4/6 h-full blur-3xl rounded-full"></div>
+        <div className="absolute py-56 animate-blob bg-gradient-to-t from-fuchsia-950 to-fuchsia-900 w-4/6 h-full blur-3xl rounded-full"></div>
         <FrontBanner />
       </div>
 
-      <div className="absolute py-56 animate-blob bg-gradient-to-t right-5 from-fuchsia-950 to-fuchsia-600 w-4/6 h-5/6 blur-3xl rounded-full"></div>
+      <div className="absolute py-56 animate-blob bg-gradient-to-t right-5 from-fuchsia-950 to-fuchsia-900 w-4/6 h-5/6 blur-3xl rounded-full"></div>
       <ScrollBar />
 
       <div className="row1 text-textColor relative my-40 mb-60">
@@ -47,7 +47,7 @@ const Home = () => {
         </>
       </div>
 
-      <div className="absolute py-50 animate-blob bg-gradient-to-t -left-20 from-fuchsia-950 to-fuchsia-600 w-3/6 h-5/6 blur-3xl rounded-full"></div>
+      <div className="absolute py-50 animate-blob bg-gradient-to-t -left-20 from-fuchsia-950 to-fuchsia-900 w-3/6 h-5/6 blur-3xl rounded-full"></div>
       <motion.div className="row2 pb-52 relative text-center text-textColor">
         <div className="title text-5xl text-white font-bold">
           Faster.Smarter.

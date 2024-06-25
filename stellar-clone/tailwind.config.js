@@ -1,3 +1,5 @@
+import { transform } from 'framer-motion';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -13,7 +15,8 @@ export default {
       },
       animation:{
         'loop-scroll':'loop-scroll 50s linear infinite',
-        'blob': 'blob 7s infinite'
+        'blob': 'blob 7s infinite',
+        'bg':'bg 100s infinite'
       },
       keyframes:{
         'loop-scroll':{
@@ -33,6 +36,20 @@ export default {
           "100%": {
             transform: "tranlate(0px, 0px) scale(1)",
           },
+        },
+        'bg':{
+          '0%': {
+            // transform: 'scale(1)'
+            backgroundPosition:'0 0'
+          },
+          '50%':{
+            // transform: 'scale(1.2)'
+            backgroundPosition:'0 80%'
+          },
+          '100%':{
+            // transform: 'scale(1)'
+            backgroundPosition:'0 0'
+          }
         }
       }
     },

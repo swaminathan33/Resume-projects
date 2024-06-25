@@ -21,8 +21,8 @@ const Dashboard = () => {
         <Navbar page={"Dashboard"} />
 
         <div className="title hidden max-sm:block">
-          <h1 className="text-3xl font-medium text-gray-700">Dashboard</h1>
-          <p className="mt-3 text-md text-gray-600">
+          <h1 className="text-xl font-medium text-gray-700">Dashboard</h1>
+          <p className="mt-1 text-sm text-gray-600">
             Welcome to Geex Modern Admin Dashboard
           </p>
         </div>

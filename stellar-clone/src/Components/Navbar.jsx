@@ -3,27 +3,31 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className=" bg-transparent flex justify-between items-center mx-14 text-textColor text-sm">
+    <div className=" bg-transparent sticky top-0 z-30 pt-5 flex justify-between items-center mx-14 text-textColor text-sm">
       <Link to={"/"}>
         <div className="logo w-10 absolute h-10 rounded-full  bg-fuchsia-600 blur-md"></div>
         <div className="logo w-8 h-8 rounded-full bg-transparent border-4"></div>
       </Link>
 
-      <ul className="flex gap-10 font-semibold">
-        <li className="hover:text-red-500 cursor-pointer">About</li>
-        <li className="hover:text-red-500 cursor-pointer">Integrations</li>
-        <li className="hover:text-red-500 cursor-pointer">Pricing</li>
-        <li className="hover:text-red-500 cursor-pointer">Customers</li>
-        <li className="hover:text-red-500 cursor-pointer">Changelog</li>
+      <ul className="flex gap-20 font-semibold">
+        <Link to={"/about"}>
+          <li className="hover:text-red-500 cursor-pointer">About</li>
+        </Link>
+        <li className="hover:text-red-500 cursor-pointer">Product</li>
+        <li className="hover:text-red-500 cursor-pointer">Services</li>
+        <li className="hover:text-red-500 cursor-pointer">Blogs</li>
+        <li className="hover:text-red-500 cursor-pointer">Training</li>
+        <li className="hover:text-red-500 cursor-pointer">Contact</li>
       </ul>
-      <div className="button flex gap-5">
+
+      {/* <div className="button flex gap-5">
         <button className="cursor-pointer hover:underline underline-offset-8">
           Sign In
         </button>
         <button className="border-0 px-2 rounded-2xl hover:underline underline-offset-8">
           Sign Up
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

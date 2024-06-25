@@ -16,13 +16,13 @@ const Navbar = ({ page }) => {
         </p>
       </div>
 
-      <div className="flex gap-10 justify-center align-middle max-sm:gap-5">
-        <div className="hidden max-sm:flex gap-6 max-sm:mr-24  ">
+      <div className="flex gap-10 justify-center align-middle items-center max-sm:gap-5">
+        <div className="hidden max-sm:flex gap-6 max-sm:mr-8">
           <button className="">
-            <IoIosMenu fontSize={"20px"} />
+            <IoIosMenu fontSize={"18px"} />
           </button>
           <button>
-            <BsPencil />
+            <BsPencil fontSize={"15px"} />
           </button>
         </div>
 
@@ -31,17 +31,17 @@ const Navbar = ({ page }) => {
         </button>
         <ImSearch
           fontSize={"18px"}
-          className="h-full text-gray-700 max-sm:w-8"
+          className="h-full text-gray-700 max-sm:w-6 max-sm:h-6"
         />
         <TbMessage
           fontSize={"18px"}
-          className="h-full text-gray-700 max-sm:w-8"
+          className="h-full text-gray-700 max-sm:w-7 max-sm:h-8"
         />
         <FaRegBell
           fontSize={"18px"}
-          className="h-full text-gray-700 max-sm:w-8"
+          className="h-full text-gray-700 max-sm:w-6 max-sm:h-6"
         />
-        <img src={profile} alt="" className="w-11 h-13" />
+        <img src={profile} alt="" className="w-11 h-13 max-sm:w-8 max-sm:h-8" />
       </div>
     </div>
   );
