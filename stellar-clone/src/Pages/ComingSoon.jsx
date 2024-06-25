@@ -6,7 +6,7 @@ const ComingSoon = () => {
   return (
     <div className="overflow-hidden">
       <div
-        className="w-100 h-screen animate-bg overflow-hidden"
+        className="px-24 py-5 w-100 h-screen animate-bg overflow-hidden"
         style={{
           backgroundImage: `url(${bg})`,
           backgroundPosition: "center",

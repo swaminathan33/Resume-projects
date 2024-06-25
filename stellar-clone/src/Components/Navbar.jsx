@@ -13,11 +13,21 @@ const Navbar = () => {
         <Link to={"/about"}>
           <li className="hover:text-red-500 cursor-pointer">About</li>
         </Link>
-        <li className="hover:text-red-500 cursor-pointer">Product</li>
-        <li className="hover:text-red-500 cursor-pointer">Services</li>
-        <li className="hover:text-red-500 cursor-pointer">Blogs</li>
-        <li className="hover:text-red-500 cursor-pointer">Training</li>
-        <li className="hover:text-red-500 cursor-pointer">Contact</li>
+        <Link to={"/product"}>
+          <li className="hover:text-red-500 cursor-pointer">Product</li>
+        </Link>
+        <Link to={"/services"}>
+          <li className="hover:text-red-500 cursor-pointer">Services</li>
+        </Link>
+        <Link to={"/blogs"}>
+          <li className="hover:text-red-500 cursor-pointer">Blogs</li>
+        </Link>
+        <Link to={"/training"}>
+          <li className="hover:text-red-500 cursor-pointer">Training</li>
+        </Link>
+        <Link to={"/contact"}>
+          <li className="hover:text-red-500 cursor-pointer">Contact</li>
+        </Link>
       </ul>
 
       {/* <div className="button flex gap-5">
