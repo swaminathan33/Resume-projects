@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../Assets/logo.svg";
 import { AiOutlineHome } from "react-icons/ai";
 import { LuLayout } from "react-icons/lu";
@@ -6,13 +6,25 @@ import { LuLayoutGrid } from "react-icons/lu";
 import { IoLayersOutline } from "react-icons/io5";
 import { BsWindow } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
 
-const Sidebar = () => {
+import { useGlobalContentContext } from "./context/ContentContext";
+
+const Sidebar = ({ lScreen }) => {
+  const { sidebarOpen, setSidebarOpen } = useGlobalContentContext();
   return (
-    <div className="col-span-2 h-screen sticky top-0 max-sm:hidden">
+    <div
+      className={`col-span-2 h-screen sticky top-0 max-sm:w-4/6 max-sm:${lScreen}`}
+    >
       <div className="bg-nav-bg shadow-sm m-4 pl-7 rounded-3xl">
-        <div className="logo pt-10 w-4/6">
+        <div className="logo pt-10 w-4/6 max-sm:flex gap-6">
           <img src={logo} alt="" />
+          <button
+            className="hidden max-sm:block mb-10"
+            onClick={() => setSidebarOpen(false)}
+          >
+            <IoClose fontSize={"20px"} color="red" />
+          </button>
         </div>
         <div className="pages text-xl pt-10">
           <ul className="">
