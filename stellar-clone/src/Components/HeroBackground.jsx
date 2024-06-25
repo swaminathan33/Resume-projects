@@ -33,7 +33,7 @@ const HeroBackground = () => {
     },
   ];
   return (
-    <div className="">
+    <div className="max-sm:hidden">
       <MouseParallax>
         <div className="w-2 h-2 shadow-xl rounded bg-fuchsia-500 absolute left-20 top-4"></div>
         <div className="w-2 h-2 shadow-xl rounded bg-fuchsia-500 absolute bottom-6 right-0"></div>

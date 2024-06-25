@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     // <div className="bg-gradient-to-r from-fuchsia-950 via-fuchsia-500 to-fuchsia-950 py-5 px-24 ">
-    <div className="bg-fuchsia-950 py-5 px-24 ">
+    <div className="bg-fuchsia-950 py-5 px-24 max-sm:px-5">
       <Navbar />
       <div className="flex justify-center align-middle text-center">
         <div className="absolute py-56 animate-blob bg-gradient-to-t from-fuchsia-950 to-fuchsia-900 w-4/6 h-full blur-3xl rounded-full"></div>
@@ -21,19 +21,22 @@ const Home = () => {
       </div>
 
       <div className="absolute py-56 animate-blob bg-gradient-to-t right-5 from-fuchsia-950 to-fuchsia-900 w-4/6 h-5/6 blur-3xl rounded-full"></div>
+      <div className="text-center mb-14 font-bold text-4xl text-white relative max-sm:text-3xl">
+        Our Clients
+      </div>
       <ScrollBar />
 
       <div className="row1 text-textColor relative my-40 mb-60">
         <>
           <p className="mb-2">The Security First Platform</p>
-          <h2 className="text-4xl font-bold mb-3">
+          <h2 className="text-4xl font-bold mb-3 max-sm:text-2xl">
             Simplify your security with <br /> authentication services
           </h2>
-          <p className="text-lg mb-3 w-3/6">
+          <p className="text-lg mb-3 w-3/6 max-sm:w-5/6">
             Define access roles for the end-users, and extend your authorization
             capabilities to implement dynamic access control.
           </p>
-          <div className="buttons flex items-start gap-2 mt-16">
+          <div className="buttons flex items-start gap-2 mt-16 max-sm:flex-col">
             <button className="border-2 border-violet mr-8 w-72 text-start rounded-lg pl-2 py-1">
               Simplify Your security
             </button>
@@ -49,10 +52,10 @@ const Home = () => {
 
       <div className="absolute py-50 animate-blob bg-gradient-to-t -left-20 from-fuchsia-950 to-fuchsia-900 w-3/6 h-5/6 blur-3xl rounded-full"></div>
       <motion.div className="row2 pb-52 relative text-center text-textColor">
-        <div className="title text-5xl text-white font-bold">
+        <div className="title text-5xl text-white font-bold max-sm:text-4xl">
           Faster.Smarter.
         </div>
-        <div className="text-lg mt-2 mb-10">
+        <div className="text-lg mt-2 mb-10 max-sm:text-sm max-sm:mx-4 max-sm:mb-2">
           There are many variations available, but the majority have suffered
           alteration in some form, <br /> by injected humour, or randomised
           words which don't look even slightly believable.

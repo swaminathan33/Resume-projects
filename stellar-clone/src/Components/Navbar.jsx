@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className=" bg-transparent sticky top-0 z-30 pt-5 flex justify-between items-center mx-14 text-textColor text-sm">
+    <div className="bg-transparent sticky top-0 z-30 pt-5 flex justify-between items-center mx-14 max-sm:gap-4 text-textColor text-sm max-sm:mx-0">
       <Link to={"/"}>
         <div className="logo w-10 absolute h-10 rounded-full  bg-fuchsia-600 blur-md"></div>
         <div className="logo w-8 h-8 rounded-full bg-transparent border-4"></div>
       </Link>
 
-      <ul className="flex gap-20 font-semibold">
+      <ul className="flex gap-20 font-semibold max-sm:gap-5 max-sm:font-normal max-sm:text-xs">
         <Link to={"/about"}>
           <li className="hover:text-red-500 cursor-pointer">About</li>
         </Link>
