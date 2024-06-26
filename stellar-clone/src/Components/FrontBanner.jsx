@@ -5,7 +5,7 @@ import HeroBackground from "./HeroBackground";
 
 const FrontBanner = () => {
   return (
-    <div className="text-textColor py-40 mt-6 relative">
+    <div className="text-textColor pt-28 pb-44 mt-6 relative ">
       <HeroBackground />
       <div className="z-20">
         {/* <div className="flex justify-center items-center mb-4">
