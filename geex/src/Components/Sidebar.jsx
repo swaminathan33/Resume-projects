@@ -29,7 +29,7 @@ const Sidebar = ({ lScreen }) => {
         <div className="pages text-xl pt-10">
           <ul className="">
             <Link to={"/"}>
-              <li className="mt-6 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+              <li className="mt-6 py-1 pl-8 flex gap-2 border-2  border-white border-solid cursor-pointer hover:border-2  hover:border-violet-400 rounded-2xl w-5/6">
                 <AiOutlineHome fontSize={"28px"} className="text-gray-400 " />
                 <div className="text-gray-700 text-lg">
                   <Link to={"/"}>Demo</Link>

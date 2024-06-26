@@ -4,7 +4,7 @@ import profile from "../Assets/profile.svg";
 
 const TodoCard = ({ todo }) => {
   return (
-    <div className="bg-white my-4 rounded-xl p-4 flex flex-col gap-2">
+    <div className="bg-white my-4 rounded-xl p-4 flex flex-col gap-2 border-2 max-sm:w-80">
       <div className="text-gray-500">
         <MdCheckBoxOutlineBlank />
       </div>

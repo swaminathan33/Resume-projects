@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar";
 import Navbar from "../Components/Navbar";
 import TodoCard from "../Components/TodoCard";
@@ -9,8 +9,13 @@ import { BsThreeDots } from "react-icons/bs";
 import { LuPlusCircle } from "react-icons/lu";
 import { FiTag } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { IoIosMenu } from "react-icons/io";
+import { useGlobalContentContext } from "../Components/context/ContentContext";
 
 const Todo = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const { sidebarOpen, setSidebarOpen } = useGlobalContentContext();
+
   const dummy_todos = [
     {
       id: 0,
@@ -40,13 +45,25 @@ const Todo = () => {
   ];
   return (
     <div className="grid grid-cols-8">
-      <Sidebar />
+      <Sidebar lScreen={"hidden"} />
+      <div
+        className={`hidden absolute top-0 w-screen bg-opacity-20 bg-black h-full max-sm:${
+          sidebarOpen ? "block" : "hidden"
+        }`}
+      >
+        <Sidebar lScreen={"block"} />
+      </div>
       <div className="col-span-6">
-        <Navbar page={"Todo"} />
-
-        <div className="Dashboard mr-6 grid grid-cols-4">
-          <div className="todo_sidebar col-span-1 rounded-xl ml-3 bg-white p-4">
-            <button className="text-center bg-btn-strong text-white py-2 px-12 rounded-xl cursor-pointer">
+        <div className="max-sm:m-4 max-sm:mt-8">
+          <Navbar page={"Todo"} />
+        </div>
+        <div className="Dashboard mr-6 grid grid-cols-4 ">
+          <div
+            className={`todo_sidebar col-span-1 rounded-xl ml-3 bg-white p-4 max-sm:absolute top-32 ${
+              openMenu ? "" : "hidden"
+            } `}
+          >
+            <button className="text-center bg-btn-strong text-white py-2 px-12 rounded-xl cursor-pointer ">
               + New Task
             </button>
             <div>
@@ -127,8 +144,13 @@ const Todo = () => {
           </div>
 
           <div className="todos col-span-3 ml-8">
-            <div className="top flex justify-between">
-              <div className="title text-2xl text-gray-600">Important Task</div>
+            <div className="top flex justify-between max-sm:flex-col max-sm:gap-4">
+              <div className="title text-2xl text-gray-600 max-sm:flex max-sm:gap-32 items-center">
+                <div>Important Task</div>
+                <div className="hidden max-sm:block">
+                  <IoIosMenu onClick={() => setOpenMenu(!openMenu)} />
+                </div>
+              </div>
               <div>
                 <button className="bg-btn-light px-4 flex gap-2 text-gray-500 rounded-xl py-2">
                   Newest
