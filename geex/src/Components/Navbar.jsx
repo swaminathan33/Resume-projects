@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { ImSearch } from "react-icons/im";
 import { TbMessage } from "react-icons/tb";
 import { FaRegBell } from "react-icons/fa";
-import profile from "../Assets/profile.svg";
+import profileImg from "../Assets/profile.svg";
 import { BsPencil } from "react-icons/bs";
 import { IoIosMenu } from "react-icons/io";
 import { useGlobalContentContext } from "./context/ContentContext";
+import SearchBox from "./SearchBox";
+import Notifications from "./Notifications";
+import BellNotifications from "./BellNotifications";
+import Profile from "./Profile";
 
 const Navbar = ({ page }) => {
   const { sidebarOpen, setSidebarOpen } = useGlobalContentContext();
+  const [searchBox, setSearchBox] = useState(false);
+  const [notifiesBox, setNotifiesBox] = useState(false);
+  const [msgBox, setMsgBox] = useState(false);
+  const [profile, setProfile] = useState(false);
 
   return (
     <div className="flex justify-between mt-4 mb-4 mr-4 ml-3 ">
@@ -32,23 +40,47 @@ const Navbar = ({ page }) => {
         <button className="text-gray-700 text-md bg-customise-btn hover:bg-violet-500 hover:text-white my-5 py-2 rounded-xl px-5 max-sm:hidden">
           Customizer
         </button>
-        <ImSearch
-          fontSize={"18px"}
-          className="h-full text-gray-700 max-sm:w-8 max-sm:h-7"
-        />
-        <TbMessage
-          fontSize={"18px"}
-          className="h-full text-gray-700 max-sm:w-9 max-sm:h-9"
-        />
-        <FaRegBell
-          fontSize={"18px"}
-          className="h-full text-gray-700 max-sm:w-9 max-sm:h-6"
-        />
-        <img
-          src={profile}
-          alt=""
-          className="w-11 h-13 max-sm:w-10 max-sm:h-10"
-        />
+        <div className="relative">
+          <ImSearch
+            fontSize={"18px"}
+            className="h-full text-gray-700 max-sm:w-5 max-sm:h-7 cursor-pointer"
+            onClick={() => setSearchBox(!searchBox)}
+          />
+          <SearchBox searchBox={searchBox} />
+        </div>
+        <div
+          className={`chats  absolute z-20 bg-yellow-400 rounded-lg right-[142px] top-9 border-2 border-white font-medium text-xs px-1 text-white max-sm:right-[125px] max-sm:top-8`}
+        >
+          <div>10</div>
+        </div>
+        <div className="relative ">
+          <TbMessage
+            fontSize={"20px"}
+            className="h-full text-gray-700 max-sm:w-6 max-sm:h-9 cursor-pointer "
+            onClick={() => setMsgBox(!msgBox)}
+          />
+          <Notifications msgBox={msgBox} />
+        </div>
+        <div className="chats  absolute z-20 bg-sky-600 rounded-lg right-[82px] top-9 border-2 border-white font-medium text-xs px-1 text-white max-sm:right-[75px] max-sm:top-8">
+          <div>10</div>
+        </div>
+        <div className="relative">
+          <FaRegBell
+            fontSize={"18px"}
+            className="h-full text-gray-700 max-sm:w-5 max-sm:h-6 cursor-pointer"
+            onClick={() => setNotifiesBox(!notifiesBox)}
+          />
+          <BellNotifications notifiesBox={notifiesBox} />
+        </div>
+        <div className="relative">
+          <img
+            src={profileImg}
+            alt=""
+            className="w-11 h-13 max-sm:w-10 max-sm:h-10 cursor-pointer"
+            onClick={() => setProfile(!profile)}
+          />
+          <Profile profile={profile} />
+        </div>
       </div>
     </div>
   );

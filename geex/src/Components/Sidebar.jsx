@@ -14,7 +14,7 @@ const Sidebar = ({ lScreen }) => {
   const { sidebarOpen, setSidebarOpen } = useGlobalContentContext();
   return (
     <div
-      className={`col-span-2 h-screen sticky top-0 max-sm:w-4/6 max-sm:${lScreen}`}
+      className={`col-span-2 z-30 h-screen sticky top-0 max-sm:w-4/6 max-sm:${lScreen}`}
     >
       <div className="bg-nav-bg shadow-sm m-4 pl-7 rounded-3xl">
         <div className="logo pt-10 w-4/6 max-sm:flex gap-6">

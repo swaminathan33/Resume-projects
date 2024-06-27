@@ -19,7 +19,7 @@ const Dashboard = () => {
   return (
     <div className="grid grid-cols-8 max-sm:grid-cols-4">
       <div
-        className={`hidden absolute top-0 w-screen bg-opacity-20 bg-black h-full max-sm:${
+        className={`hidden absolute top-0 w-screen z-30 bg-opacity-20 bg-black h-full max-sm:${
           sidebarOpen ? "block" : "hidden"
         }`}
       >

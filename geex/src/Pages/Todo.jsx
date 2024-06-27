@@ -11,43 +11,72 @@ import { FiTag } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosMenu } from "react-icons/io";
 import { useGlobalContentContext } from "../Components/context/ContentContext";
+import AddTodo from "../Components/AddTodo";
+import { TiThSmallOutline } from "react-icons/ti";
 
 const Todo = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openAddTodo, setOpenAddTodo] = useState(false);
   const { sidebarOpen, setSidebarOpen } = useGlobalContentContext();
-
-  const dummy_todos = [
+  const [dummyTodos, setDummyTodos] = useState([
     {
       id: 0,
       date: "January 24th, 2021 04:25 PM",
       todo: "Create custom floating action buttton in Geex Mobile",
+      completed: false,
+      tags: "important",
     },
     {
       id: 1,
       date: "January 24th, 2021 04:25 PM",
       todo: "Revision 1 : Remove background in main banner Geex Website",
+      completed: true,
+      tags: "completed",
     },
     {
       id: 2,
       date: "January 24th, 2021 04:25 PM",
       todo: "Fix login & register form design",
+      completed: false,
+      tags: "important",
     },
     {
       id: 3,
       date: "January 24th, 2021 04:25 PM",
       todo: "Add “cart icon” at Geex Ecommerce Page",
+      completed: false,
+      tags: "removed",
     },
     {
       id: 4,
       date: "January 24th, 2021 04:25 PM",
       todo: "Attend weekly meeting Geex Design Team",
+      completed: true,
+      tags: "completed",
     },
-  ];
+  ]);
+
+  const [newTodo, setNewTodo] = useState(dummyTodos);
+
+  const handleTagFilter = (tag) => {
+    if (tag == "all") {
+      setNewTodo(dummyTodos);
+    } else {
+      const newT = dummyTodos.filter((todo) => todo.tags == tag);
+      setNewTodo(newT);
+    }
+  };
+
   return (
     <div className="grid grid-cols-8">
+      <AddTodo
+        openTodo={openAddTodo}
+        setOpenTodo={setOpenAddTodo}
+        setDummyTodos={setDummyTodos}
+      />
       <Sidebar lScreen={"hidden"} />
       <div
-        className={`hidden absolute top-0 w-screen bg-opacity-20 bg-black h-full max-sm:${
+        className={`hidden absolute top-0 z-30 w-screen bg-opacity-20 bg-black h-full max-sm:${
           sidebarOpen ? "block" : "hidden"
         }`}
       >
@@ -59,34 +88,58 @@ const Todo = () => {
         </div>
         <div className="Dashboard mr-6 grid grid-cols-4 ">
           <div
-            className={`todo_sidebar col-span-1 rounded-xl ml-3 bg-white p-4 max-sm:absolute top-32 ${
+            className={`todo_sidebar col-span-1 rounded-xl ml-3 bg-white p-4 max-sm:absolute top-32 max-sm:${
               openMenu ? "" : "hidden"
             } `}
           >
-            <button className="text-center bg-btn-strong text-white py-2 px-12 rounded-xl cursor-pointer ">
+            <button
+              onClick={() => setOpenAddTodo(true)}
+              className="text-center bg-btn-strong text-white py-2 px-12 rounded-xl cursor-pointer "
+            >
               + New Task
             </button>
             <div>
               <ul className="pl-4 flex flex-col gap-4 my-4 text-gray-700">
-                <li className="flex gap-2  hover:text-btn-strong">
+                <li
+                  className="flex gap-2  hover:text-btn-strong cursor-pointer"
+                  onClick={() => handleTagFilter("all")}
+                >
+                  <div className="text-gray-500 ">
+                    <TiThSmallOutline fontSize={"22px"} />
+                  </div>
+                  All Todos
+                </li>
+                <li
+                  className="flex gap-2  hover:text-btn-strong cursor-pointer"
+                  onClick={() => handleTagFilter("important")}
+                >
                   <div className="text-gray-500 ">
                     <MdOutlineInfo fontSize={"22px"} />
                   </div>
                   Important
                 </li>
-                <li className="flex gap-2 hover:text-btn-strong">
+                <li
+                  className="flex gap-2 hover:text-btn-strong cursor-pointer"
+                  onClick={() => handleTagFilter("completed")}
+                >
                   <div className="text-gray-500 ">
                     <IoCheckmarkDoneSharp fontSize={"22px"} />
                   </div>
                   Completed
                 </li>
-                <li className="flex gap-2 hover:text-btn-strong">
+                <li
+                  className="flex gap-2 hover:text-btn-strong cursor-pointer"
+                  onClick={() => handleTagFilter("removed")}
+                >
                   <div className="text-gray-500">
                     <RiDeleteBin5Line fontSize={"22px"} />
                   </div>
                   Removed
                 </li>
-                <li className="flex gap-2 hover:text-btn-strong">
+                <li
+                  className="flex gap-2 hover:text-btn-strong cursor-pointer"
+                  onClick={() => handleTagFilter("duesoon")}
+                >
                   <div className="text-gray-500">
                     <BsThreeDots fontSize={"22px"} />
                   </div>
@@ -162,9 +215,26 @@ const Todo = () => {
             </div>
 
             <div>
-              {dummy_todos.map((i, index) => {
-                return <TodoCard key={index} todo={i} />;
-              })}
+              {newTodo.length == 0 ? (
+                <div className="flex justify-center mt-32">
+                  No Todos Found...
+                </div>
+              ) : (
+                newTodo
+                  .slice()
+                  .reverse()
+                  .map((i, index) => {
+                    return (
+                      <TodoCard
+                        key={index}
+                        todo={i}
+                        dummyTodos={dummyTodos}
+                        setDummyTodos={setDummyTodos}
+                        setNewTodo={setNewTodo}
+                      />
+                    );
+                  })
+              )}
             </div>
           </div>
         </div>
