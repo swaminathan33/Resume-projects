@@ -5,12 +5,11 @@ import SearchVideoCard from "../Components/SearchVideoCard";
 
 const SearchPage = () => {
   const searchVideos = useSelector((state) => state.searchvideo);
-  console.log("searchvideos from redux", searchVideos);
   return (
     <Mainlayout>
       {searchVideos.value
-        ? searchVideos.value.map((video) => {
-            return <SearchVideoCard video={video} />;
+        ? searchVideos.value.map((video, index) => {
+            return <SearchVideoCard video={video} key={index} />;
           })
         : "nothing found"}
     </Mainlayout>

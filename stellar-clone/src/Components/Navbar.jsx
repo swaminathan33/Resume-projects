@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="bg-transparent sticky top-0 z-30 pt-5 flex justify-between items-center mx-14 max-sm:gap-4 text-textColor text-sm max-sm:mx-5 ">
       <Link to={"/"}>
-        <div className="logo w-10 absolute h-10 rounded-full  bg-fuchsia-600 blur-md"></div>
+        <div className="logo w-10 absolute h-10 rounded-full  bg-backgroundColor2 blur-md"></div>
         <div className="logo w-8 h-8 rounded-full bg-transparent border-4"></div>
       </Link>
 

@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useRef, useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import logo from "../Assets/yt-logo.png";
@@ -14,9 +14,17 @@ import { addVideos } from "../Slices/SearchVideos";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchWord, setSearchWord] = useState("");
-  const [finalWord, setFinalWord] = useState("");
-  const [searchVideos, setSearchVideos] = useState([]);
-  let searchvideosVar = [];
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const sampleRef = useRef([]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  };
 
   const dispatch = useDispatch((state) => state.searchvideo.addVideos);
 
@@ -36,20 +44,20 @@ const Navbar = () => {
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
       },
     });
-    setSearchVideos(res.data.items);
-    // console.log("hi", searchVideos);
+    sampleRef.current = res.data.items;
+    return sampleRef.current;
   };
 
-  useEffect(() => {
-    getSearchVideos(searchWord);
-    console.log("searchvideos from state", searchVideos);
-    dispatch(addVideos(searchVideos));
-    navigate(`/search`);
-  }, [finalWord]);
+  // useEffect(() => {}, [finalWord]);
 
-  const handleSearch = () => {};
+  const handleSearch = async (searchWord) => {
+    const data = await getSearchVideos(searchWord);
+    dispatch(addVideos(data));
+    navigate(`/search`);
+  };
+
   return (
-    <div className="flex justify-between items-center mt-4 px-5">
+    <div className="flex dark:bg-black justify-between items-center mt-4 px-5">
       {menuOpen ? (
         <SidebarToggle menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       ) : (
@@ -74,16 +82,16 @@ const Navbar = () => {
             placeholder="Search"
             onChange={(e) => setSearchWord(e.target.value)}
           />
-          <div>
+          <div ref={sampleRef}>
             <CiSearch
               fontSize={"25px"}
               className="cursor-pointer"
-              onClick={() => setFinalWord(searchWord)}
+              onClick={() => handleSearch(searchWord)}
             />
           </div>
         </div>
         <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300">
-          <FaMicrophone fontSize={"20px"} />
+          <FaMicrophone fontSize={"20px"} onClick={toggleDarkMode} />
         </div>
       </div>
       <div className="flex justify-between items-center gap-4">

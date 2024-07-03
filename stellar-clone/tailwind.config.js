@@ -9,8 +9,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        'backgroundColor':'#593556',
-        'backgroundColor2':'#A26E9F',
+        'backgroundColor':'#2C2C54',
+        'backgroundColor2':'#474787',
         'textColor':'white',
       },
       animation:{

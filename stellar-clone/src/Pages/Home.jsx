@@ -13,10 +13,10 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     // <div className="bg-gradient-to-r from-fuchsia-950 via-fuchsia-500 to-fuchsia-950 py-5 px-24 ">
-    <div className="bg-fuchsia-950 py-5 px-24 max-sm:px-5">
+    <div className="bg-backgroundColor py-5 px-24 max-sm:px-5">
       <Navbar />
       <div className="flex justify-center align-middle text-center">
-        <div className="absolute py-56 animate-blob bg-gradient-to-t from-fuchsia-950 to-fuchsia-900 w-4/6 h-full blur-3xl rounded-full"></div>
+        <div className="absolute py-56 animate-blob bg-backgroundColor2 w-4/6 h-full blur-3xl rounded-full"></div>
         <FrontBanner />
       </div>
 
