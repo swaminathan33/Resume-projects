@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SearchVideoCard = ({ video }) => {
   return (
-    <div className="flex mb-5 max-sm:flex-col max-sm:mt-14">
+    <div className="flex mb-5 max-sm:flex-col mt-14">
       <Link to={`/video/${video.id.videoId}`}>
         <div className="mr-4">
           <img

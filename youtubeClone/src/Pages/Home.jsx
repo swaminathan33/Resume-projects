@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    // getHomeVideos();
+    getHomeVideos();
   }, []);
 
   return (

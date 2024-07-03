@@ -49,8 +49,8 @@ const VideoPage = () => {
   };
 
   useEffect(() => {
-    // getVideoDetails(id);
-    // getSuggestedVideos(id);
+    getVideoDetails(id);
+    getSuggestedVideos(id);
   }, []);
 
   return (
