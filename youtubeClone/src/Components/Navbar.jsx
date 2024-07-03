@@ -45,7 +45,7 @@ const Navbar = () => {
     console.log("searchvideos from state", searchVideos);
     dispatch(addVideos(searchVideos));
     navigate(`/search`);
-  }, [searchVideos]);
+  }, [finalWord]);
 
   const handleSearch = () => {};
   return (
