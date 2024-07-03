@@ -23,12 +23,12 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getHomeVideos();
+    // getHomeVideos();
   }, []);
 
   return (
     <Mainlayout>
-      <div className="grid grid-cols-3 mt-5">
+      <div className="grid grid-cols-3 mt-16 max-sm:flex max-sm:flex-col">
         {homeVideos.map((video, index) => {
           return (
             <VideoCard

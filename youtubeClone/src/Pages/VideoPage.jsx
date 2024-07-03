@@ -45,26 +45,24 @@ const VideoPage = () => {
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
       },
     });
-    // console.log(res.data);
     setSuggestedVideos(res.data.items);
-    // console.log(suggestedVideos);
   };
 
   useEffect(() => {
-    getVideoDetails(id);
-    getSuggestedVideos(id);
+    // getVideoDetails(id);
+    // getSuggestedVideos(id);
   }, []);
 
   return (
     <Mainlayout>
-      {videoDetail.map((video) => {
+      {videoDetail.map((video, index) => {
         return (
-          <div>
-            <div className="grid grid-cols-8">
-              <div className="w-[700px] col-span-5">
+          <div key={index}>
+            <div className="grid grid-cols-8 max-sm:flex flex-col max-sm:mt-12">
+              <div className="w-[700px] max-sm:w-[330px] col-span-5">
                 <div className="video">
                   <iframe
-                    className="rounded-2xl"
+                    className="rounded-2xl max-sm:w-[330px] max-sm:h-[200px]"
                     width="700"
                     height="400"
                     src={`https://www.youtube.com/embed/${id}?si=7Jq67zDasEoG_sFp`}
@@ -74,14 +72,15 @@ const VideoPage = () => {
                     allowFullScreen
                   ></iframe>
                 </div>
-                <div className="video_info mt-4">
-                  <div className="title font-bold text-xl">
+
+                <div className="video_info mt-4 max-sm:w-[330px]">
+                  <div className="title font-bold text-xl max-sm:text-base">
                     {video.snippet.localized.title}
                   </div>
-                  <div className="buttons flex justify-between items-center mt-4">
-                    <div className="flex justify-between items-center gap-20">
+                  <div className="buttons flex flex-col justify-between items-center mt-4">
+                    <div className="flex justify-between items-center gap-20 max-sm:mb-3">
                       <div>
-                        <p className="font-semibold text-lg">
+                        <p className="font-semibold text-lg max-sm:text-base">
                           {video.snippet.channelTitle}
                         </p>
                       </div>
@@ -92,7 +91,7 @@ const VideoPage = () => {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-6 max-sm:justify-between max-sm:w-full">
                       <div className="likes bg-gray-200 px-2 py-1 flex justify-center items-center gap-6 cursor-pointer rounded-full">
                         <span className="flex justify-center items-center gap-2 ">
                           <AiOutlineLike fontSize={"22px"} />{" "}
@@ -105,12 +104,12 @@ const VideoPage = () => {
                       </div>
                     </div>
 
-                    <div>
+                    <div className="max-sm:hidden">
                       <BsThreeDotsVertical />
                     </div>
                   </div>
                 </div>
-                <div className="description mt-4 bg-gray-200 rounded-lg p-2">
+                <div className="description mt-4 bg-gray-200 rounded-lg p-2 max-sm:w-[330px] overflow-hidden">
                   <div className="description-top font-semibold text-sm mb-2 flex justify-between">
                     <span>{video.statistics.viewCount} Views</span>
                     <span>

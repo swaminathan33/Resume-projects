@@ -10,14 +10,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addVideos } from "../Slices/SearchVideos";
-import { FiArrowLeft } from "react-icons/fi";
 
-const Navbar = () => {
+const NavbarSmall = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchWord, setSearchWord] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [navbarToggle, setNavbarToggle] = useState(false);
-
   const sampleRef = useRef([]);
 
   const toggleDarkMode = () => {
@@ -54,13 +51,13 @@ const Navbar = () => {
   // useEffect(() => {}, [finalWord]);
 
   const handleSearch = async (searchWord) => {
-    const data = await getSearchVideos(searchWord);
+    // const data = await getSearchVideos(searchWord);
     dispatch(addVideos(data));
     navigate(`/search`);
   };
 
   return (
-    <div className="flex dark:bg-black justify-between items-center pt-4 px-5 fixed top-0 bg-white right-0 left-0 pb-2">
+    <div className="flex dark:bg-black justify-between items-center mt-4 px-5">
       {menuOpen ? (
         <SidebarToggle menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       ) : (
@@ -68,7 +65,7 @@ const Navbar = () => {
       )}
       <div className="flex justify-between items-center gap-4">
         <div
-          className="hover:border-[1px] p-2 hover:bg-gray-200 border-none rounded-full max-sm:hidden"
+          className="hover:border-[1px] p-2 hover:bg-gray-200 border-none rounded-full"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <LuMenu fontSize={"22"} />
@@ -78,8 +75,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex justify-between items-center gap-6 max-sm:hidden">
-        <div className="searchbar  border-[1px] border-slate-300 rounded-full px-4 p-2 flex justify-center items-center">
+      <div className="flex justify-between items-center gap-6">
+        <div className="searchbar border-[1px] border-slate-300 rounded-full px-4 p-2 flex justify-center items-center">
           <input
             type="text"
             className="w-[35rem] outline-none"
@@ -99,47 +96,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <CiSearch
-        fontSize={"25px"}
-        className="cursor-pointer"
-        onClick={() => setNavbarToggle(true)}
-      />
-
-      {navbarToggle ? (
-        <div className="hidden navbar@smallscreen py-2 shadow-lg px-2 absolute bg-white top-0 right-0 max-sm:flex justify-between w-full items-center ">
-          <div>
-            <FiArrowLeft
-              fontSize={"23px"}
-              className="cursor-pointer"
-              onClick={() => setNavbarToggle(false)}
-            />
-          </div>
-          {/* <div className="flex justify-between items-center gap-6"> */}
-          <div className="searchbar  border-[1px] border-slate-300 rounded-full px-4 py-2 flex justify-center items-center">
-            <input
-              type="text"
-              className="w-[10rem] text-sm outline-none"
-              placeholder="Search"
-              onChange={(e) => setSearchWord(e.target.value)}
-            />
-            <div ref={sampleRef}>
-              <CiSearch
-                fontSize={"20px"}
-                className="cursor-pointer"
-                onClick={() => handleSearch(searchWord)}
-              />
-            </div>
-          </div>
-          <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300">
-            <FaMicrophone fontSize={"20px"} onClick={toggleDarkMode} />
-          </div>
-          {/* </div> */}
-        </div>
-      ) : (
-        ""
-      )}
-
-      <div className="flex justify-between items-center gap-4 max-sm:hidden">
+      <div className="flex justify-between items-center gap-4">
         <BsThreeDotsVertical fontSize={"20px"} />
         <div className="signIn border-[1px] rounded-full p-2 px-3 hover:bg-blue-100">
           <button className="text-blue-600 font-medium flex justify-center items-center gap-1">
@@ -152,4 +109,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarSmall;
