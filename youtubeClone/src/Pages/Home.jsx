@@ -9,7 +9,7 @@ const Home = () => {
   const getHomeVideos = async () => {
     const res = await axios.get("https://youtube-v31.p.rapidapi.com/search", {
       params: {
-        // relatedToVideoId: "7ghhRHRP6t4",
+        relatedToVideoId: "7ghhRHRP6t4",
         part: "id,snippet",
         type: "video",
         maxResults: "50",
@@ -20,16 +20,16 @@ const Home = () => {
       },
     });
     setHomeVideos(res.data.items);
-    console.log(homeVideos);
+    // console.log(homeVideos);
   };
 
   useEffect(() => {
-    // getHomeVideos();
+    getHomeVideos();
   }, []);
 
   return (
     <Mainlayout>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 mt-5">
         {homeVideos.map((video, index) => {
           return (
             <VideoCard

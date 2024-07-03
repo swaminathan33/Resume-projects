@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import VideoPage from "./Pages/VideoPage";
+import SearchPage from "./Pages/SearchPage";
 const App = () => {
   // const api = async () => {
   //   const res = await axios
@@ -22,8 +23,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/video/:id" element={<VideoPage />} />
+        <Route path="/search" element={<SearchPage />} />
       </Routes>
     </BrowserRouter>
   );
