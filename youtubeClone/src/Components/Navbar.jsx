@@ -4,6 +4,8 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import logo from "../Assets/yt-logo.png";
 import whiteLogo from "../Assets/yt-logo-white.png";
 import { FaMicrophone } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
+import { IoSunnyOutline, IoSunnySharp } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { RiAccountCircleLine } from "react-icons/ri";
 import SidebarToggle from "./SidebarToggle";
@@ -112,7 +114,11 @@ const Navbar = () => {
           </div>
         </div>
         <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black">
-          <FaMicrophone fontSize={"20px"} onClick={toggleDarkMode} />
+          {isDarkMode ? (
+            <IoSunnySharp fontSize={"20px"} onClick={toggleDarkMode} />
+          ) : (
+            <FaRegMoon fontSize={"20px"} onClick={toggleDarkMode} />
+          )}
         </div>
       </div>
 
@@ -148,7 +154,11 @@ const Navbar = () => {
             </div>
           </div>
           <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black">
-            <FaMicrophone fontSize={"20px"} onClick={toggleDarkMode} />
+            {isDarkMode ? (
+              <IoSunnySharp fontSize={"20px"} onClick={toggleDarkMode} />
+            ) : (
+              <FaRegMoon fontSize={"20px"} onClick={toggleDarkMode} />
+            )}
           </div>
           {/* </div> */}
         </div>
