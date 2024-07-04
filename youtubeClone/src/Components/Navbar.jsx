@@ -7,7 +7,7 @@ import { CiSearch } from "react-icons/ci";
 import { RiAccountCircleLine } from "react-icons/ri";
 import SidebarToggle from "./SidebarToggle";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addVideos } from "../Slices/SearchVideos";
 import { FiArrowLeft } from "react-icons/fi";
@@ -40,7 +40,7 @@ const Navbar = () => {
         part: "snippet,id",
         regionCode: "US",
         maxResults: "50",
-        order: "date",
+        order: "relevance",
       },
       headers: {
         "x-rapidapi-key": "4d08e6d40bmsh66c49b4bf545d8bp177b08jsn3047ad857da0",
@@ -74,7 +74,9 @@ const Navbar = () => {
           <LuMenu fontSize={"22"} />
         </div>
         <div>
-          <img src={logo} height={"90"} width={"90"} alt="" />
+          <Link to={"/"}>
+            <img src={logo} height={"90"} width={"90"} alt="" />
+          </Link>
         </div>
       </div>
 

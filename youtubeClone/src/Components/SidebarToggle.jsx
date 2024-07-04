@@ -5,32 +5,45 @@ import { SiYoutubeshorts } from "react-icons/si";
 import { MdOutlineSubscriptions } from "react-icons/md";
 import { PiDownloadSimple } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import logo from "../Assets/yt-logo.png";
 
 const SidebarToggle = ({ menuOpen, setMenuOpen }) => {
   return (
-    <div className="sidebar layer absolute bg-black bg-opacity-15 top-0 left-0 bottom-0 right-0">
-      <div className="sidebar bg-white w-40 h-screen">
-        <div onClick={() => setMenuOpen(!menuOpen)}>
-          <LuMenu />
+    <div className="sidebar layer absolute bg-black bg-opacity-35 top-0 left-0 -bottom-100 right-0">
+      <div className="sidebar bg-white w-52 h-screen">
+        <div className="flex justify-between p-5 items-center">
+          <div
+            className="hover:border-[1px] p-4 hover:bg-gray-200 border-none rounded-full max-sm:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <LuMenu fontSize={"22"} />
+          </div>
+          <div>
+            <Link to={"/"}>
+              <img src={logo} height={"90"} width={"90"} alt="" />
+            </Link>
+          </div>
         </div>
-        <ul className="flex flex-col w-16">
+        <ul className="flex flex-col w-full gap-10 justify-center items-start pl-10">
           <Link to={"/"}>
-            <li className="flex flex-col justify-center items-center hover:bg-gray-200 py-4 rounded-xl cursor-pointer">
-              <MdHomeFilled fontSize={"22px"} />
-              <div className="text-[10px] mt-2">Home</div>
+            <li className="flex justify-center items-center gap-2 hover:bg-gray-200 py-1 px-2 rounded-lg cursor-pointer">
+              <div>
+                <MdHomeFilled fontSize={"24px"} />
+              </div>
+              <div className="text-sm">Home</div>
             </li>
           </Link>
-          <li className="flex flex-col justify-center items-center hover:bg-gray-200 py-4 rounded-xl cursor-pointer">
-            <SiYoutubeshorts fontSize={"22px"} />
-            <div className="text-[10px] mt-2">Shorts</div>
+          <li className="flex justify-center items-center gap-2 hover:bg-gray-200 py-1 px-2 rounded-lg cursor-pointer">
+            <SiYoutubeshorts fontSize={"24px"} />
+            <div className="text-sm">Shorts</div>
           </li>
-          <li className="flex flex-col justify-center items-center hover:bg-gray-200 py-4 rounded-xl cursor-pointer">
-            <MdOutlineSubscriptions fontSize={"22px"} />
-            <div className="text-[10px] mt-2">Subscriptions</div>
+          <li className="flex justify-center items-center gap-2 hover:bg-gray-200 py-1 px-2 rounded-lg cursor-pointer">
+            <MdOutlineSubscriptions fontSize={"24px"} />
+            <div className="text-sm">Subscriptions</div>
           </li>
-          <li className="flex flex-col justify-center items-center hover:bg-gray-200 py-4 rounded-xl cursor-pointer">
-            <PiDownloadSimple fontSize={"22px"} />
-            <div className="text-[10px] mt-2">Downloads</div>
+          <li className="flex justify-center items-center gap-2 hover:bg-gray-200 py-1 px-2 rounded-lg cursor-pointer">
+            <PiDownloadSimple fontSize={"24px"} />
+            <div className="text-sm">Downloads</div>
           </li>
         </ul>
       </div>
