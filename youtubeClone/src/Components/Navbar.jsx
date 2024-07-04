@@ -3,9 +3,8 @@ import { LuMenu } from "react-icons/lu";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import logo from "../Assets/yt-logo.png";
 import whiteLogo from "../Assets/yt-logo-white.png";
-import { FaMicrophone } from "react-icons/fa";
 import { FaRegMoon } from "react-icons/fa";
-import { IoSunnyOutline, IoSunnySharp } from "react-icons/io5";
+import { IoSunnySharp } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { RiAccountCircleLine } from "react-icons/ri";
 import SidebarToggle from "./SidebarToggle";
@@ -14,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addVideos } from "../Slices/SearchVideos";
 import { FiArrowLeft } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,12 +25,24 @@ const Navbar = () => {
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
+    localStorage.setItem("darkmode", JSON.stringify(!isDarkMode));
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
     } else {
       document.documentElement.classList.add("dark");
     }
   };
+
+  // localStorage.setItem("darkmode", JSON.stringify(false));
+
+  useEffect(() => {
+    const darkmode = JSON.parse(localStorage.getItem("darkmode"));
+    if (darkmode == isDarkMode) {
+      return;
+    } else {
+      toggleDarkMode();
+    }
+  }, []);
 
   const dispatch = useDispatch((state) => state.searchvideo.addVideos);
 
@@ -51,7 +63,7 @@ const Navbar = () => {
       },
     });
     sampleRef.current = res.data.items;
-    console.log(sampleRef.current);
+    // console.log(sampleRef.current);
     return sampleRef.current;
   };
 
@@ -99,7 +111,13 @@ const Navbar = () => {
 
       <div className="flex justify-between items-center gap-6 max-sm:hidden">
         <div className="searchbar  border-[1px] border-slate-300 rounded-full px-4 p-2 flex justify-center items-center">
-          <input
+          <motion.input
+            initial={{
+              width: "25rem",
+            }}
+            whileFocus={{
+              width: "35rem",
+            }}
             type="text"
             className="w-[35rem] outline-none"
             placeholder="Search"
@@ -129,7 +147,7 @@ const Navbar = () => {
       />
 
       {navbarToggle ? (
-        <div className="hidden navbar@smallscreen py-2 shadow-lg px-2 absolute bg-white top-0 right-0 max-sm:flex justify-between w-full items-center ">
+        <div className="hidden navbar@smallscreen dark:bg-black bg-white py-2 shadow-lg px-2 absolute top-0 right-0 max-sm:flex justify-between w-full items-center ">
           <div>
             <FiArrowLeft
               fontSize={"23px"}

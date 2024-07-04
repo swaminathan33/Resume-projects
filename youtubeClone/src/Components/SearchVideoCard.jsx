@@ -1,10 +1,11 @@
 import React from "react";
 import thumb from "../Assets/testing-thumbnail.jpeg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const SearchVideoCard = ({ video }) => {
   return (
-    <div className="flex searchvideocard  mb-5 max-sm:flex-col mt-14">
+    <motion.div className="flex searchvideocard  mb-5 max-sm:flex-col mt-14">
       <Link to={`/video/${video.id.videoId}`}>
         <div className="mr-4">
           <img
@@ -28,7 +29,7 @@ const SearchVideoCard = ({ video }) => {
           </div>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

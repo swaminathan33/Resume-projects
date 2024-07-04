@@ -3,10 +3,18 @@ import image from "../Assets/testing-thumbnail.jpeg";
 import Profileimage from "../Assets/profile-testing.jpeg";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const VideoCard = ({ video, id }) => {
   return (
-    <div className="mb-10 w-[23rem] max-sm:w-[20rem]">
+    <motion.div
+      initial={{ scale: 0.2, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      whileHover={{
+        scale: 1.03,
+      }}
+      className="mb-10 w-[23rem] max-sm:w-[20rem]"
+    >
       <Link to={`/video/${id}`}>
         <div className="cursor-pointer">
           <div className="top-image">
@@ -36,7 +44,7 @@ const VideoCard = ({ video, id }) => {
           </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

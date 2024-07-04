@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import thumb from "../Assets/testing-thumbnail.jpeg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const SmallVideoCard = ({ video }) => {
   const [videoState, setVideoState] = useState(video);
   return (
     <Link to={`/video/${videoState.id.videoId}`}>
-      <div className="flex mb-4 mt-1">
+      <motion.div whileHover={{ scale: 1.02 }} className="flex mb-4 mt-1">
         <div className="">
           <img
             src={videoState ? videoState.snippet.thumbnails.medium.url : ""}
@@ -24,7 +25,7 @@ const SmallVideoCard = ({ video }) => {
             {videoState.snippet.publishedAt?.slice(0, 10)}
           </p>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

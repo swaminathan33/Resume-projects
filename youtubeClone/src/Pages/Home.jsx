@@ -20,7 +20,7 @@ const Home = () => {
       },
     });
     setHomeVideos(res.data.items);
-    console.log(res.data.items);
+    // console.log(res.data.items);
   };
 
   useEffect(() => {

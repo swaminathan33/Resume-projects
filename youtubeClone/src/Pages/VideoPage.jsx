@@ -7,6 +7,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import { PiShareFatThin } from "react-icons/pi";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const VideoPage = () => {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const VideoPage = () => {
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
       },
     });
-    console.log(res.data.items);
+    // console.log(res.data.items);
     setVideoDetails(res.data.items);
     // console.log(videoDetail);
   };
@@ -53,6 +54,31 @@ const VideoPage = () => {
     getSuggestedVideos(id);
   }, []);
 
+  const boxVariant = {
+    hidden: {
+      opaciy: 0,
+    },
+    visible: {
+      opaciy: 1,
+      transition: {
+        delay: 0.7,
+        when: "beforeChildren",
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const listVariant = {
+    hidden: {
+      x: -200,
+      opaciy: 0,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   return (
     <Mainlayout>
       {videoDetail.map((video, index) => {
@@ -61,7 +87,18 @@ const VideoPage = () => {
             <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-16">
               <div className="w-[700px] max-sm:w-[330px] col-span-5">
                 <div className="video">
-                  <iframe
+                  <motion.iframe
+                    initial={{
+                      width: "100px",
+                      height: "50px",
+                    }}
+                    animate={{
+                      width: "700px",
+                      height: "400px",
+                      transition: {
+                        delay: 0.1,
+                      },
+                    }}
                     className="rounded-2xl max-sm:w-[330px] max-sm:h-[200px]"
                     width="700"
                     height="400"
@@ -70,7 +107,7 @@ const VideoPage = () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
-                  ></iframe>
+                  ></motion.iframe>
                 </div>
 
                 <div className="video_info mt-4 max-sm:w-[330px]">
@@ -145,11 +182,25 @@ const VideoPage = () => {
                 </div>
               </div>
 
-              <div className="suggestions col-span-3">
+              <motion.div
+                variants={boxVariant}
+                animate="visible"
+                initial="hidden"
+                className="suggestions col-span-3"
+              >
                 {suggestedVideos.map((video, index) => {
-                  return <SmallVideoCard video={video} key={index} />;
+                  return (
+                    <motion.div
+                      variants={listVariant}
+                      animate="visible"
+                      initial="hidden"
+                      key={index}
+                    >
+                      <SmallVideoCard video={video} />
+                    </motion.div>
+                  );
                 })}
-              </div>
+              </motion.div>
             </div>
           </div>
         );
