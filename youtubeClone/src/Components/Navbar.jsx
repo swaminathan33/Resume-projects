@@ -48,6 +48,7 @@ const Navbar = () => {
       },
     });
     sampleRef.current = res.data.items;
+    console.log(sampleRef.current);
     return sampleRef.current;
   };
 

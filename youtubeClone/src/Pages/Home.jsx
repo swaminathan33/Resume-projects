@@ -9,7 +9,7 @@ const Home = () => {
   const getHomeVideos = async () => {
     const res = await axios.get("https://youtube-v31.p.rapidapi.com/search", {
       params: {
-        relatedToVideoId: "7ghhRHRP6t4",
+        relatedToVideoId: "4k6Xgjqkad4",
         part: "id,snippet",
         type: "video",
         maxResults: "50",
@@ -20,6 +20,7 @@ const Home = () => {
       },
     });
     setHomeVideos(res.data.items);
+    console.log(res.data.items);
   };
 
   useEffect(() => {
