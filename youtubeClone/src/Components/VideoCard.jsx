@@ -11,7 +11,7 @@ const VideoCard = ({ video, id }) => {
         <div className="cursor-pointer">
           <div className="top-image">
             <img
-              src={video.thumbnails.high.url}
+              src={video.thumbnails.medium.url}
               alt=""
               className="rounded-xl w-[23rem] h-[15rem] max-sm:w-[20rem]"
             />

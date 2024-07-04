@@ -6,3 +6,22 @@
     background-color: black;
     color: white;
 } */
+
+.dark{
+    background: black;
+    color: white;
+}
+
+.dark input{
+    background-color: black;
+}
+
+.dark .description{
+    background-color: rgb(36, 35, 35);
+    color: white;
+}
+
+.dark .likes, .share, .subscribe{
+    background-color: rgb(36, 35, 35);
+}
+

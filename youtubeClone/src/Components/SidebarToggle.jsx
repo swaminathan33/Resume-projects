@@ -6,21 +6,35 @@ import { MdOutlineSubscriptions } from "react-icons/md";
 import { PiDownloadSimple } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import logo from "../Assets/yt-logo.png";
+import whiteLogo from "../Assets/yt-logo-white.png";
 
 const SidebarToggle = ({ menuOpen, setMenuOpen }) => {
   return (
     <div className="sidebar layer absolute bg-black bg-opacity-35 top-0 left-0 -bottom-100 right-0">
-      <div className="sidebar bg-white w-52 h-screen">
+      <div className="sidebar bg-white dark:bg-black w-52 h-screen">
         <div className="flex justify-between p-5 items-center">
           <div
-            className="hover:border-[1px] p-4 hover:bg-gray-200 border-none rounded-full max-sm:hidden"
+            className="hover:border-[1px] p-4 dark:hover:bg-gray-800 hover:bg-gray-200 border-none rounded-full max-sm:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <LuMenu fontSize={"22"} />
           </div>
           <div>
             <Link to={"/"}>
-              <img src={logo} height={"90"} width={"90"} alt="" />
+              <img
+                src={logo}
+                className="dark:hidden block"
+                height={"90"}
+                width={"90"}
+                alt=""
+              />
+              <img
+                src={whiteLogo}
+                className="dark:block hidden"
+                height={"90"}
+                width={"90"}
+                alt=""
+              />
             </Link>
           </div>
         </div>

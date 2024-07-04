@@ -2,6 +2,7 @@ import { React, useEffect, useRef, useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import logo from "../Assets/yt-logo.png";
+import whiteLogo from "../Assets/yt-logo-white.png";
 import { FaMicrophone } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { RiAccountCircleLine } from "react-icons/ri";
@@ -39,7 +40,7 @@ const Navbar = () => {
         q: searchWord,
         part: "snippet,id",
         regionCode: "US",
-        maxResults: "50",
+        maxResults: "100",
         order: "relevance",
       },
       headers: {
@@ -69,14 +70,27 @@ const Navbar = () => {
       )}
       <div className="flex justify-between items-center gap-4">
         <div
-          className="hover:border-[1px] p-2 hover:bg-gray-200 border-none rounded-full max-sm:hidden"
+          className="hover:border-[1px] p-2 hover:bg-gray-200 dark:hover:bg-gray-800 border-none rounded-full max-sm:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <LuMenu fontSize={"22"} />
         </div>
         <div>
           <Link to={"/"}>
-            <img src={logo} height={"90"} width={"90"} alt="" />
+            <img
+              src={logo}
+              className="dark:hidden block"
+              height={"90"}
+              width={"90"}
+              alt=""
+            />
+            <img
+              src={whiteLogo}
+              className="dark:block hidden"
+              height={"90"}
+              width={"90"}
+              alt=""
+            />
           </Link>
         </div>
       </div>
@@ -97,14 +111,14 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300">
+        <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black">
           <FaMicrophone fontSize={"20px"} onClick={toggleDarkMode} />
         </div>
       </div>
 
       <CiSearch
         fontSize={"25px"}
-        className="cursor-pointer"
+        className="hidden cursor-pointer max-sm:flex"
         onClick={() => setNavbarToggle(true)}
       />
 
@@ -133,7 +147,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300">
+          <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black">
             <FaMicrophone fontSize={"20px"} onClick={toggleDarkMode} />
           </div>
           {/* </div> */}

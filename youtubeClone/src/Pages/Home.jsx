@@ -12,7 +12,7 @@ const Home = () => {
         relatedToVideoId: "4k6Xgjqkad4",
         part: "id,snippet",
         type: "video",
-        maxResults: "50",
+        maxResults: "100",
       },
       headers: {
         "x-rapidapi-key": "4d08e6d40bmsh66c49b4bf545d8bp177b08jsn3047ad857da0",

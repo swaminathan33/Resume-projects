@@ -58,7 +58,7 @@ const VideoPage = () => {
       {videoDetail.map((video, index) => {
         return (
           <div key={index}>
-            <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-12">
+            <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-16">
               <div className="w-[700px] max-sm:w-[330px] col-span-5">
                 <div className="video">
                   <iframe
@@ -85,7 +85,7 @@ const VideoPage = () => {
                         </p>
                       </div>
                       <div className="">
-                        <button className="bg-black text-white px-3 py-1 rounded-full hover:bg-gray-900 font-semibold">
+                        <button className="bg-black subscribe text-white px-3 py-1 rounded-full hover:bg-gray-900 font-semibold">
                           Subscribe
                         </button>
                       </div>

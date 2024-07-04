@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const SearchVideoCard = ({ video }) => {
   return (
-    <div className="flex mb-5 max-sm:flex-col mt-14">
+    <div className="flex searchvideocard  mb-5 max-sm:flex-col mt-14">
       <Link to={`/video/${video.id.videoId}`}>
         <div className="mr-4">
           <img
-            src={video.snippet.thumbnails.high.url}
+            src={video.snippet.thumbnails.medium.url}
             alt=""
             className="min-w-[30rem] h-[18rem] rounded-xl max-sm:min-w-[20rem]"
           />
@@ -16,10 +16,10 @@ const SearchVideoCard = ({ video }) => {
       </Link>
       <div className="">
         <Link to={`/video/${video.id.videoId}`} className="w-5/6">
-          <div className="font-normal text-gray-950 text-lg w-5/6">
+          <div className="font-normal text-gray-950 dark:text-white text-lg w-5/6">
             {video.snippet.title}
           </div>
-          <div className="text-gray-600 text-sm flex flex-col gap-3 max-sm:gap-1">
+          <div className="text-gray-600 text-sm flex flex-col dark:text-gray-400 gap-3 max-sm:gap-1">
             <p>1M {video.snippet.publishedAt}</p>
             <p>{video.snippet.channelTitle}</p>
             <p className="w-5/6 max-sm:hidden">

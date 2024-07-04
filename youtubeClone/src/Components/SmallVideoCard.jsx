@@ -5,10 +5,10 @@ const SmallVideoCard = ({ video }) => {
   const [videoState, setVideoState] = useState(video);
   return (
     <Link to={`/video/${videoState.id.videoId}`}>
-      <div className="flex mb-4">
+      <div className="flex mb-4 mt-1">
         <div className="">
           <img
-            src={videoState ? videoState.snippet.thumbnails.high.url : ""}
+            src={videoState ? videoState.snippet.thumbnails.medium.url : ""}
             className="max-w-48 max-h-28 rounded-xl"
             alt=""
           />
