@@ -27,7 +27,7 @@ const VideoPage = () => {
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
       },
     });
-    // console.log(res.data);
+    console.log(res.data);
     setVideoDetails(res.data.items);
     // console.log(videoDetail);
   };
@@ -58,7 +58,7 @@ const VideoPage = () => {
       {videoDetail.map((video, index) => {
         return (
           <div key={index}>
-            <div className="grid grid-cols-8 max-sm:flex flex-col max-sm:mt-12">
+            <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-12">
               <div className="w-[700px] max-sm:w-[330px] col-span-5">
                 <div className="video">
                   <iframe
@@ -77,7 +77,7 @@ const VideoPage = () => {
                   <div className="title font-bold text-xl max-sm:text-base">
                     {video.snippet.localized.title}
                   </div>
-                  <div className="buttons flex flex-col justify-between items-center mt-4">
+                  <div className="buttons flex max-sm:flex-col justify-between items-center mt-4">
                     <div className="flex justify-between items-center gap-20 max-sm:mb-3">
                       <div>
                         <p className="font-semibold text-lg max-sm:text-base">
@@ -109,6 +109,7 @@ const VideoPage = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="description mt-4 bg-gray-200 rounded-lg p-2 max-sm:w-[330px] overflow-hidden">
                   <div className="description-top font-semibold text-sm mb-2 flex justify-between">
                     <span>{video.statistics.viewCount} Views</span>
