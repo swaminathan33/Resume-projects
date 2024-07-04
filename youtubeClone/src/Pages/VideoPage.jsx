@@ -27,7 +27,7 @@ const VideoPage = () => {
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
       },
     });
-    console.log(res.data);
+    console.log(res.data.items);
     setVideoDetails(res.data.items);
     // console.log(videoDetail);
   };
