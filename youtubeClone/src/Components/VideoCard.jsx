@@ -5,14 +5,13 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const VideoCard = ({ video, id }) => {
-  console.log(video);
   return (
     <div className="mb-10 w-[23rem] max-sm:w-[20rem]">
       <Link to={`/video/${id}`}>
         <div className="cursor-pointer">
           <div className="top-image">
             <img
-              // src={video.thumbnails.high.url}
+              src={video.thumbnails.high.url}
               alt=""
               className="rounded-xl w-[23rem] h-[15rem] max-sm:w-[20rem]"
             />
