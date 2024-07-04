@@ -81,130 +81,134 @@ const VideoPage = () => {
 
   return (
     <Mainlayout>
-      {videoDetail.map((video, index) => {
-        return (
-          <div key={index}>
-            <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-16">
-              <div className="w-[700px] max-sm:w-[330px] col-span-5">
-                <div className="video">
-                  <motion.iframe
-                    initial={{
-                      width: "100px",
-                      height: "50px",
-                    }}
-                    animate={{
-                      width: "700px",
-                      height: "400px",
-                      transition: {
-                        delay: 0.1,
-                      },
-                    }}
-                    className="rounded-2xl max-sm:w-[330px] max-sm:h-[200px]"
-                    width="700"
-                    height="400"
-                    src={`https://www.youtube.com/embed/${id}?si=7Jq67zDasEoG_sFp`}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></motion.iframe>
-                </div>
+      {videoDetail
+        ? videoDetail.map((video, index) => {
+            return (
+              <div key={index}>
+                <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-16">
+                  <div className="w-[700px] max-sm:w-[330px] col-span-5">
+                    <div className="video">
+                      <motion.iframe
+                        initial={{
+                          width: "100px",
+                          height: "50px",
+                        }}
+                        animate={{
+                          width: "700px",
+                          height: "400px",
+                          transition: {
+                            delay: 0.1,
+                          },
+                        }}
+                        className="rounded-2xl max-sm:w-[330px] max-sm:h-[200px]"
+                        width="700"
+                        height="400"
+                        src={`https://www.youtube.com/embed/${id}?si=7Jq67zDasEoG_sFp`}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></motion.iframe>
+                    </div>
 
-                <div className="video_info mt-4 max-sm:w-[330px]">
-                  <div className="title font-bold text-xl max-sm:text-base">
-                    {video.snippet.localized.title}
-                  </div>
-                  <div className="buttons flex max-sm:flex-col justify-between items-center mt-4">
-                    <div className="flex justify-between items-center gap-20 max-sm:mb-3">
-                      <div>
-                        <p className="font-semibold text-lg max-sm:text-base">
-                          {video.snippet.channelTitle}
-                        </p>
+                    <div className="video_info mt-4 max-sm:w-[330px]">
+                      <div className="title font-bold text-xl max-sm:text-base">
+                        {video.snippet.localized.title}
                       </div>
-                      <div className="">
-                        <button className="bg-black subscribe text-white px-3 py-1 rounded-full hover:bg-gray-900 font-semibold">
-                          Subscribe
-                        </button>
+                      <div className="buttons flex max-sm:flex-col justify-between items-center mt-4">
+                        <div className="flex justify-between items-center gap-20 max-sm:mb-3">
+                          <div>
+                            <p className="font-semibold text-lg max-sm:text-base">
+                              {video.snippet.channelTitle}
+                            </p>
+                          </div>
+                          <div className="">
+                            <button className="bg-black subscribe text-white px-3 py-1 rounded-full hover:bg-gray-900 font-semibold">
+                              Subscribe
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-6 max-sm:justify-between max-sm:w-full">
+                          <div className="likes bg-gray-200 px-2 py-1 flex justify-center items-center gap-6 cursor-pointer rounded-full">
+                            <span className="flex justify-center items-center gap-2 ">
+                              <AiOutlineLike fontSize={"22px"} />{" "}
+                              {video.statistics.likeCount}
+                            </span>
+                            <AiOutlineDislike fontSize={"22px"} />
+                          </div>
+                          <div className="share flex bg-gray-200 rounded-full justify-center items-center px-2 py-1 gap-2">
+                            <PiShareFatThin fontSize={"20px"} /> Share
+                          </div>
+                        </div>
+
+                        <div className="max-sm:hidden">
+                          <BsThreeDotsVertical />
+                        </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-6 max-sm:justify-between max-sm:w-full">
-                      <div className="likes bg-gray-200 px-2 py-1 flex justify-center items-center gap-6 cursor-pointer rounded-full">
-                        <span className="flex justify-center items-center gap-2 ">
-                          <AiOutlineLike fontSize={"22px"} />{" "}
-                          {video.statistics.likeCount}
+                    <div className="description mt-4 bg-gray-200 rounded-lg p-2 max-sm:w-[330px] overflow-hidden">
+                      <div className="description-top font-semibold text-sm mb-2 flex justify-between">
+                        <span>{video.statistics.viewCount} Views</span>
+                        <span>
+                          published at {video.snippet.publishedAt.slice(0, 10)}
                         </span>
-                        <AiOutlineDislike fontSize={"22px"} />
                       </div>
-                      <div className="share flex bg-gray-200 rounded-full justify-center items-center px-2 py-1 gap-2">
-                        <PiShareFatThin fontSize={"20px"} /> Share
+                      <div className="description-bottom">
+                        {showMore ? (
+                          <div>
+                            {video.snippet.description}
+                            <br />
+                            <br />
+                            <button
+                              className="font-bold"
+                              onClick={() => setShowMore(false)}
+                            >
+                              show less
+                            </button>
+                          </div>
+                        ) : (
+                          <div>
+                            {video.snippet.description.slice(0, 300)}
+                            <button
+                              className="font-bold"
+                              onClick={() => setShowMore(true)}
+                            >
+                              ...more
+                            </button>
+                          </div>
+                        )}
                       </div>
                     </div>
+                  </div>
 
-                    <div className="max-sm:hidden">
-                      <BsThreeDotsVertical />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="description mt-4 bg-gray-200 rounded-lg p-2 max-sm:w-[330px] overflow-hidden">
-                  <div className="description-top font-semibold text-sm mb-2 flex justify-between">
-                    <span>{video.statistics.viewCount} Views</span>
-                    <span>
-                      published at {video.snippet.publishedAt.slice(0, 10)}
-                    </span>
-                  </div>
-                  <div className="description-bottom">
-                    {showMore ? (
-                      <div>
-                        {video.snippet.description}
-                        <br />
-                        <br />
-                        <button
-                          className="font-bold"
-                          onClick={() => setShowMore(false)}
-                        >
-                          show less
-                        </button>
-                      </div>
-                    ) : (
-                      <div>
-                        {video.snippet.description.slice(0, 300)}
-                        <button
-                          className="font-bold"
-                          onClick={() => setShowMore(true)}
-                        >
-                          ...more
-                        </button>
-                      </div>
-                    )}
-                  </div>
+                  <motion.div
+                    variants={boxVariant}
+                    animate="visible"
+                    initial="hidden"
+                    className="suggestions col-span-3"
+                  >
+                    {suggestedVideos
+                      ? suggestedVideos.map((video, index) => {
+                          return (
+                            <motion.div
+                              variants={listVariant}
+                              animate="visible"
+                              initial="hidden"
+                              key={index}
+                            >
+                              <SmallVideoCard video={video} />
+                            </motion.div>
+                          );
+                        })
+                      : ""}
+                  </motion.div>
                 </div>
               </div>
-
-              <motion.div
-                variants={boxVariant}
-                animate="visible"
-                initial="hidden"
-                className="suggestions col-span-3"
-              >
-                {suggestedVideos.map((video, index) => {
-                  return (
-                    <motion.div
-                      variants={listVariant}
-                      animate="visible"
-                      initial="hidden"
-                      key={index}
-                    >
-                      <SmallVideoCard video={video} />
-                    </motion.div>
-                  );
-                })}
-              </motion.div>
-            </div>
-          </div>
-        );
-      })}
+            );
+          })
+        : ""}
     </Mainlayout>
   );
 };
