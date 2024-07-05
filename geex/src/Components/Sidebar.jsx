@@ -36,15 +36,15 @@ const Sidebar = ({ lScreen }) => {
                 </div>
               </li>
             </Link>
-            <li className="mt-6 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+            {/* <li className="mt-6 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
               <LuLayout fontSize={"28px"} className="text-gray-400" />
               <div className="text-gray-700 text-lg">Layout</div>
-            </li>
+            </li> */}
             <Link to={"/todo"}>
               <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
                 <LuLayoutGrid fontSize={"28px"} className="text-gray-400" />
                 <div className="text-gray-700 text-lg">
-                  <div>App</div>
+                  <div>Todo</div>
                 </div>
               </li>
             </Link>
@@ -57,11 +57,11 @@ const Sidebar = ({ lScreen }) => {
               </div>
             </li> */}
 
-            <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+            <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 hover:opacity-15 rounded-2xl w-5/6">
               <IoLayersOutline fontSize={"28px"} className="text-gray-400" />
               <div className="text-gray-700 text-lg">Features</div>
             </li>
-            <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 rounded-2xl w-5/6">
+            <li className="mt-8 py-1 pl-8 flex gap-2 border-2 border-white cursor-pointer hover:border-2 hover:border-violet-400 hover:opacity-15 rounded-2xl w-5/6">
               <BsWindow fontSize={"25px"} className="text-gray-400" />
               <div className="text-gray-700 text-lg">Pages</div>
             </li>
