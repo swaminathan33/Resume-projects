@@ -212,9 +212,11 @@ const VideoPage = () => {
                       <h2>Comments</h2>
                     </div>
                     {commentsRef.current
-                      ? commentsRef.current.map((comment, index) => {
-                          return <Comments comment={comment} key={index} />;
-                        })
+                      ? commentsRef.current
+                          .slice(0, 10)
+                          .map((comment, index) => {
+                            return <Comments comment={comment} key={index} />;
+                          })
                       : ""}
                   </div>
 
