@@ -67,7 +67,7 @@ const VideoPage = () => {
         },
       }
     );
-    console.log(res.data);
+    // console.log(res.data);
     commentsRef.current = res.data.items;
   };
 
@@ -86,7 +86,7 @@ const VideoPage = () => {
       transition: {
         delay: 0.7,
         when: "beforeChildren",
-        staggerChildren: 0.3,
+        staggerChildren: 0.2,
       },
     },
   };

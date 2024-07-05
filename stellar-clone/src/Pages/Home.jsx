@@ -9,9 +9,60 @@ import { IoLockClosedOutline } from "react-icons/io5";
 import { BsLayoutTextWindow } from "react-icons/bs";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { MouseParallax, ScrollParallax } from "react-just-parallax";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 
 const Home = () => {
+  const boxVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.7,
+        beforeChildren: "when",
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const listVariant = {
+    hidden: {
+      y: -10,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  const items = [
+    {
+      text: "Filters",
+      icon: <FaRegHeart />,
+    },
+    {
+      text: "Configurable",
+      icon: <FiLink />,
+    },
+    {
+      text: "Adaptable",
+      icon: <HiMiniCursorArrowRipple />,
+    },
+    {
+      text: "Authorization",
+      icon: <IoLockClosedOutline />,
+    },
+    {
+      text: "Management",
+      icon: <BsLayoutTextWindow />,
+    },
+    {
+      text: "Building",
+      icon: <FaRegEyeSlash />,
+    },
+  ];
   return (
     // <div className="bg-gradient-to-r from-fuchsia-950 via-fuchsia-500 to-fuchsia-950 py-5 px-24 ">
     <div className="bg-backgroundColor py-5 px-24 max-sm:px-5">
@@ -78,67 +129,29 @@ const Home = () => {
       </motion.div>
 
       <div>
-        <motion.ul className="flex relative justify-center gap-20 flex-wrap">
-          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
-            <div className="title text-white flex items-center gap-2 ">
-              <FaRegHeart /> Filters
-            </div>
-            <p className="text-textColor text-sm">
-              Login box must find the right balance for the user convenience,
-              privacy and security.
-            </p>
-          </li>
-
-          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
-            <div className="title text-white flex items-center gap-2">
-              {" "}
-              <FiLink /> Configurable
-            </div>
-            <p className="text-textColor text-sm">
-              Login box must find the right balance for the user convenience,
-              privacy and security.
-            </p>
-          </li>
-          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
-            <div className="title text-white flex items-center gap-2">
-              {" "}
-              <HiMiniCursorArrowRipple /> Adapdable
-            </div>
-            <p className="text-textColor text-sm">
-              Login box must find the right balance for the user convenience,
-              privacy and security.
-            </p>
-          </li>
-          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
-            <div className="title text-white flex items-center gap-2">
-              {" "}
-              <IoLockClosedOutline /> Authorization
-            </div>
-            <p className="text-textColor text-sm">
-              Login box must find the right balance for the user convenience,
-              privacy and security.
-            </p>
-          </li>
-          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
-            <div className="title text-white flex items-center gap-2">
-              {" "}
-              <BsLayoutTextWindow /> Management
-            </div>
-            <p className="text-textColor text-sm">
-              Login box must find the right balance for the user convenience,
-              privacy and security.
-            </p>
-          </li>
-          <li className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl">
-            <div className="title text-white flex items-center gap-2">
-              {" "}
-              <FaRegEyeSlash /> Building
-            </div>
-            <p className="text-textColor text-sm">
-              Login box must find the right balance for the user convenience,
-              privacy and security.
-            </p>
-          </li>
+        <motion.ul
+          variants={boxVariants}
+          animate="visible"
+          initial="hidden"
+          className="flex relative justify-center gap-20 flex-wrap"
+        >
+          {items &&
+            items.map((i) => {
+              return (
+                <motion.li
+                  variants={listVariant}
+                  className=" w-72 border-2 border-neutral-400 p-2 rounded-2xl"
+                >
+                  <div className="title text-white flex items-center gap-2">
+                    {i.icon} {i.text}
+                  </div>
+                  <p className="text-textColor text-sm">
+                    Login box must find the right balance for the user
+                    convenience, privacy and security.
+                  </p>
+                </motion.li>
+              );
+            })}
         </motion.ul>
       </div>
     </div>

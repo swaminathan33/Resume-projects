@@ -15,9 +15,7 @@ const Home = () => {
         maxResults: "100",
       },
       headers: {
-        // "x-rapidapi-key": "4d08e6d40bmsh66c49b4bf545d8bp177b08jsn3047ad857da0",
-        "x-rapidapi-key": "0fb6413a6dmsh88e5a2653463a4fp1769cajsn53dd6ea50182",
-        // "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
+        "x-rapidapi-key": "4d08e6d40bmsh66c49b4bf545d8bp177b08jsn3047ad857da0",
         "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
       },
     });
