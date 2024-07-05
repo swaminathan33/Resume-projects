@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 
 const Comments = ({ comment }) => {
-  console.log("comment", comment);
+  // console.log("comment", comment);
   return (
     <div className="flex items-start mb-6">
       <div className="profile">

@@ -110,17 +110,19 @@ const VideoPage = () => {
               <div key={index}>
                 <div className="grid grid-cols-8 max-sm:flex max-sm:flex-col mt-16">
                   <div className="w-[700px] max-sm:w-[330px] col-span-5">
-                    <div className="video">
+                    <div className="video overflow-hidden">
                       <motion.iframe
                         initial={{
-                          width: "100px",
-                          height: "50px",
+                          // width: "100px",
+                          scale: 0.5,
+                          // height: "50px",
                         }}
                         animate={{
-                          width: "700px",
-                          height: "400px",
+                          // width: "700px",
+                          scale: 1,
+                          // height: "400px",
                           transition: {
-                            delay: 0.1,
+                            delay: 0.5,
                           },
                         }}
                         className="rounded-2xl max-sm:w-[330px] max-sm:h-[200px]"
@@ -209,7 +211,6 @@ const VideoPage = () => {
                     <div className="comments mt-10 text-2xl font-semibold mb-5">
                       <h2>Comments</h2>
                     </div>
-                    {console.log(commentsRef.current)}
                     {commentsRef.current
                       ? commentsRef.current.map((comment, index) => {
                           return <Comments comment={comment} key={index} />;
@@ -236,7 +237,7 @@ const VideoPage = () => {
                             </motion.div>
                           );
                         })
-                      : ""}
+                      : "please refresh the page.."}
                   </motion.div>
                 </div>
               </div>
