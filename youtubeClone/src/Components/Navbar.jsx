@@ -131,13 +131,16 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black">
+        <motion.div
+          animate={{ rotate: 360 }}
+          className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black"
+        >
           {isDarkMode ? (
             <IoSunnySharp fontSize={"20px"} onClick={toggleDarkMode} />
           ) : (
             <FaRegMoon fontSize={"20px"} onClick={toggleDarkMode} />
           )}
-        </div>
+        </motion.div>
       </div>
 
       <CiSearch
@@ -157,7 +160,13 @@ const Navbar = () => {
           </div>
           {/* <div className="flex justify-between items-center gap-6"> */}
           <div className="searchbar  border-[1px] border-slate-300 rounded-full px-4 py-2 flex justify-center items-center">
-            <input
+            <motion.input
+              initial={{
+                width: 0,
+              }}
+              animate={{
+                width: "10rem",
+              }}
               type="text"
               className="w-[10rem] text-sm outline-none"
               placeholder="Search"
@@ -171,13 +180,16 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <div className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black">
+          <motion.div
+            animate={{ rotate: 360 }}
+            className="mic border-[1px] p-2 rounded-full bg-gray-100 hover:bg-gray-300 dark:bg-black"
+          >
             {isDarkMode ? (
               <IoSunnySharp fontSize={"20px"} onClick={toggleDarkMode} />
             ) : (
               <FaRegMoon fontSize={"20px"} onClick={toggleDarkMode} />
             )}
-          </div>
+          </motion.div>
           {/* </div> */}
         </div>
       ) : (

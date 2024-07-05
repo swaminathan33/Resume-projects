@@ -10,6 +10,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addVideos } from "../Slices/SearchVideos";
+import { motion } from "framer-motion";
 
 const NavbarSmall = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -77,7 +78,7 @@ const NavbarSmall = () => {
 
       <div className="flex justify-between items-center gap-6">
         <div className="searchbar border-[1px] border-slate-300 rounded-full px-4 p-2 flex justify-center items-center">
-          <input
+          <motion.input
             type="text"
             className="w-[35rem] outline-none"
             placeholder="Search"
