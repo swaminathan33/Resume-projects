@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Mainlayout from "../Components/Layout/Mainlayout";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -8,12 +8,14 @@ import { AiOutlineDislike } from "react-icons/ai";
 import { PiShareFatThin } from "react-icons/pi";
 import axios from "axios";
 import { motion } from "framer-motion";
+import Comments from "../Components/Comments";
 
 const VideoPage = () => {
   const { id } = useParams();
   const [showMore, setShowMore] = useState(false);
   const [videoDetail, setVideoDetails] = useState([]);
   const [suggestedVideos, setSuggestedVideos] = useState([]);
+  const commentsRef = useRef([]);
 
   const getVideoDetails = async (videoId) => {
     // console.log("hi");
@@ -49,9 +51,30 @@ const VideoPage = () => {
     setSuggestedVideos(res.data.items);
   };
 
+  const getVideoComments = async (id) => {
+    const res = await axios.get(
+      "https://youtube-v31.p.rapidapi.com/commentThreads",
+      {
+        params: {
+          part: "snippet",
+          videoId: id,
+          maxResults: "100",
+        },
+        headers: {
+          "x-rapidapi-key":
+            "4d08e6d40bmsh66c49b4bf545d8bp177b08jsn3047ad857da0",
+          "x-rapidapi-host": "youtube-v31.p.rapidapi.com",
+        },
+      }
+    );
+    console.log(res.data);
+    commentsRef.current = res.data.items;
+  };
+
   useEffect(() => {
     getVideoDetails(id);
     getSuggestedVideos(id);
+    getVideoComments(id);
   }, []);
 
   const boxVariant = {
@@ -181,6 +204,16 @@ const VideoPage = () => {
                         )}
                       </div>
                     </div>
+
+                    <div className="comments mt-10 text-2xl font-semibold mb-5">
+                      <h2>Comments</h2>
+                    </div>
+                    {console.log(commentsRef.current)}
+                    {commentsRef.current
+                      ? commentsRef.current.map((comment, index) => {
+                          return <Comments comment={comment} key={index} />;
+                        })
+                      : ""}
                   </div>
 
                   <motion.div

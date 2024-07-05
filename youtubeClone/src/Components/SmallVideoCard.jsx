@@ -12,7 +12,7 @@ const SmallVideoCard = ({ video }) => {
             <div className="">
               <img
                 src={
-                  videoState.snippet.thumbnails.medium.url
+                  videoState.snippet.thumbnails.medium.url !== null
                     ? videoState.snippet.thumbnails.medium.url
                     : ""
                 }
