@@ -175,7 +175,8 @@ const VideoPage = () => {
                       <div className="description-top font-semibold text-sm mb-2 flex justify-between">
                         <span>{video.statistics.viewCount} Views</span>
                         <span>
-                          published at {video.snippet.publishedAt.slice(0, 10)}
+                          published at{" "}
+                          {video.snippet.publishedAt.toString().slice(0, 10)}
                         </span>
                       </div>
                       <div className="description-bottom">
