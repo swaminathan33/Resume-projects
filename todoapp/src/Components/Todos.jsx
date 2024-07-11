@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { IoMdLink } from "react-icons/io";
@@ -11,21 +11,25 @@ import { taskdetailid } from "./Slices/TodoDetail";
 
 const Todos = ({ text }) => {
   const dispatch = useDispatch();
+  // const [completed, setCompleted] = useState(false);
   return (
     <div
-      className="border-2 flex flex-col p-4 rounded-xl hover:bg-blue-200 cursor-pointer"
+      className="border-[2px] flex flex-col gap-3 p-4 rounded-xl hover:bg-indigo-400 hover:text-white cursor-pointer"
       onClick={() => dispatch(taskdetailid(text.id))}
     >
-      <div className="top flex">
+      <div className="top flex gap-3 items-center">
         <div>
           <MdOutlineCheckBoxOutlineBlank />
+          {/* <MdOutlineCheckBox /> */}
         </div>
-        <div className="title text-sm">{text.todo.todo}</div>
+        <div className="title text-md">{text.todo.todo}</div>
       </div>
-      <div className="flex gap-4">
-        <IoMdLink />
+      <div className="flex gap-4 ml-7">
+        <IoMdLink /> {}
         <FaRegComments />
-        <FaRegCalendarAlt />
+        <div className="flex items-center gap-2 ">
+          <FaRegCalendarAlt /> <span className="text-xs">{text.todo.date}</span>
+        </div>
         <FaTrashCan onClick={() => deleteDoc(doc(db, "todos", text.id))} />
       </div>
     </div>

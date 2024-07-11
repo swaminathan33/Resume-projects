@@ -38,7 +38,7 @@ const TaskDetails = () => {
       <div className="text-indigo-800 font-semibold text-xl">Task Details</div>
       <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3">
         <p className="text-xs text-gray-500">My Work Task</p>
-        <div className="text-lg my-2">{task?.todo}</div>
+        <div className="text-lg my-2 font-medium">{task?.todo}</div>
         <p className="text-xs">{task?.description}</p>
         <ul className="flex flex-col mt-4 gap-3">
           <li className="flex gap-5 ">

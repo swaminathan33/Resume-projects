@@ -15,6 +15,7 @@ const Home = () => {
   const showTodo = useSelector(
     ({ todoDetail }) => todoDetail.todoDetail.showTodo
   );
+  const [currentDate, setCurrentDate] = useState("");
   useEffect(() => {
     localStorage.setItem("authUser", JSON.stringify(user));
     async function fetchData() {
@@ -41,24 +42,37 @@ const Home = () => {
     fetchData();
   }, []);
 
+  const getDate = () => {
+    const date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let currentDate = `${day}-${month}-${year}`;
+    setCurrentDate(currentDate);
+  };
+  useEffect(() => {
+    getDate();
+  }, []);
   return (
     <MainLayout>
-      <div className="text-indigo-800 font-semibold mt-10 mx-5">
+      <div className="text-indigo-800 font-semibold pt-10 mx-5 overflow-hidden h-screen">
         <h2 className="text-2xl">Todo</h2>
-        <div className="date mt-6">Today, 22 April</div>
+        <div className="date mt-6 font-bold">
+          Today, {currentDate && currentDate}
+        </div>
         <div className="flex justify-between my-2">
           <ul className="flex mt-2 gap-4 text-gray-400">
             <li>List</li>
             <li>Board</li>
             <li>Completed</li>
           </ul>
-          <div className="bg-indigo-500 text-white p-1 rounded-xl px-2">
+          <div className="bg-indigo-500 text-white p-1 rounded-lg px-2">
             <button onClick={() => dispatch(addtodoshow(true))}>
               New Task
             </button>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 overflow-auto h-[25rem] no-scrollbar">
           {todos?.map((i, index) => {
             return <Todos text={i} key={index} />;
           })}

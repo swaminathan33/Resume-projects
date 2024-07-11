@@ -1,14 +1,21 @@
 ☐ Todo App @started(24-07-06 05:25)
 
 
-☐ add firebase authentication
-☐ add firebase database 
+✔ add firebase authentication @done(24-07-12 02:37)
+✔ add firebase database @done(24-07-12 02:37)
 ☐ framer motion animation
 ☐ dark mode
-☐ use redux
+✔ use redux @done(24-07-12 02:37)
 ☐ responsiveness
 
-Designs 
+Errors todo
+
+☐ cross origin policy
+☐ refresh error
+
+
+
+Designs & Refs
 
 https://dribbble.com/shots/23726833-Jets-Productivity-Website
 Private Route refer -> https://medium.com/@daboigbae/learn-react-authentication-with-firebase-83c12a08f0f5

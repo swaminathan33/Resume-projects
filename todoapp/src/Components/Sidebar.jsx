@@ -4,40 +4,59 @@ import { MdOutlineForwardToInbox } from "react-icons/md";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { FaRegTrashAlt } from "react-icons/fa";
 import avatar from "../Assets/avatar-emoji.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RiProgress2Line, RiProgress5Line } from "react-icons/ri";
 
 const Sidebar = () => {
+  const user = useSelector(({ authdetails }) => authdetails.user);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("authUser");
+    navigate("/login");
+  };
   return (
     <div className="bg-gray-200 h-screen p-4 text-zinc-600 flex flex-col gap-7 pt-8 sticky top-0">
-      <div className="top flex">
+      <div className="top flex items-center">
         <img width={30} height={30} src={avatar} alt="" />
-        Emir's Space
+        <div className="text-sm">{user ? user?.name : "user323"}</div>
       </div>
       <ul className="flex flex-col gap-3">
-        <p className="text-zinc-500 text-sm">General</p>
+        <p className="text-zinc-400 text-sm">General</p>
         <Link to={"/"}>
-          <li className="flex items-center gap-3 pl-4 border-2 border-gray-200 link:border-indigo-700">
-            <LuListTodo /> <div>Todo</div>
+          <li className="flex items-center gap-3 pl-4  hover:bg-white p-2 rounded-lg ">
+            <LuListTodo /> <div className="">Todo</div>
           </li>
         </Link>
-        <li className="flex items-center gap-3 pl-4">
+        <li className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg ">
           <MdOutlineForwardToInbox />
           Inbox
         </li>
-        <li className="flex items-center gap-3 pl-4">
+        <li className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg ">
           <FaRegCalendarAlt />
           Calendar
         </li>
-        <li className="flex items-center gap-3 pl-4">
+        <li className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg ">
           <FaRegTrashAlt />
           Trash
         </li>
       </ul>
-      <p className="text-zinc-500 text-sm">Task Progress</p>
-      <ul className="flex flex-col gap-2">
-        <li>My Work Task</li>
-        <li>Trip Plan 2024</li>
+      <p className="text-zinc-400 text-sm">Task Progress</p>
+      <ul className="flex flex-col gap-2 pl-4">
+        <li className="flex items-center gap-4">
+          Debugging <RiProgress5Line />
+        </li>
+        <li className="flex items-center gap-4">
+          Geex Website <RiProgress2Line />
+        </li>
       </ul>
+      <button
+        onClick={handleLogout}
+        className="bg-red-400 text-center text-white font-bold rounded-lg cursor-pointer py-1"
+      >
+        LogOut
+      </button>
     </div>
   );
 };

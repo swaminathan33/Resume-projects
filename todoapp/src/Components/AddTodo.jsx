@@ -109,7 +109,7 @@ const AddTodo = () => {
             />
           </div>
 
-          <div className="flex flex-col items-start mb-3">
+          {/* <div className="flex flex-col items-start mb-3">
             <p>Attachment</p>
             <input
               value={input.attachment}
@@ -120,7 +120,7 @@ const AddTodo = () => {
               className="bg-gray-200 rounded-md mt-1 h-8 w-5/6 outline-none"
               type="file"
             />
-          </div>
+          </div> */}
 
           <div>
             <button
