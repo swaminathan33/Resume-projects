@@ -9,6 +9,9 @@ import { motion } from "framer-motion";
 const AddTodo = () => {
   const dispatch = useDispatch();
   const user = useSelector(({ authdetails }) => authdetails.user);
+  const newtask = useSelector(
+    ({ todoDetail }) => todoDetail.todoDetail.newtaskshow
+  );
   const [input, setInput] = useState({
     todo: "",
     description: "",
@@ -35,9 +38,12 @@ const AddTodo = () => {
   };
 
   return (
-    <div className="">
-      <div className="m-2 fixed top-8 w-[25rem]">
-        <div className="text-indigo-800 font-semibold text-xl">New Task</div>
+    <div className={`max-sm:`}>
+      <div className="m-2 fixed top-8 w-[25rem] max-sm:w-[22rem] bg-white">
+        <div className="text-indigo-800 font-semibold text-xl max-sm:flex justify-between">
+          <span>New Task</span>
+          {/* <IoClose /> */}
+        </div>
         <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3">
           <button
             onClick={() => dispatch(addtodoshow(false))}

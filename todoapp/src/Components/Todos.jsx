@@ -7,7 +7,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useDispatch } from "react-redux";
-import { taskdetailid } from "./Slices/TodoDetail";
+import { taskdetailid, taskshow } from "./Slices/TodoDetail";
 import { motion } from "framer-motion";
 import { boxVariant, listVariant } from "./constants/constants";
 
@@ -15,7 +15,7 @@ const Todos = ({ text }) => {
   const dispatch = useDispatch();
   // const [completed, setCompleted] = useState(false);
   return (
-    <motion.div>
+    <motion.div onClick={() => dispatch(taskshow(true))}>
       <motion.div
         whileTap={{ scale: 0.98 }}
         whileHover={{ scale: 0.99 }}
