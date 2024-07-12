@@ -33,6 +33,7 @@ const Sidebar = () => {
         <p className="text-zinc-400 text-sm">General</p>
         <Link to={"/"}>
           <motion.li
+            whileHover={{ scale: 1.02 }}
             variants={listVariant}
             className="flex items-center gap-3 pl-4  hover:bg-white p-2 rounded-lg "
           >
@@ -41,6 +42,7 @@ const Sidebar = () => {
         </Link>
         <motion.li
           variants={listVariant}
+          whileHover={{ scale: 1.02 }}
           className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg "
         >
           <MdOutlineForwardToInbox />
@@ -48,6 +50,7 @@ const Sidebar = () => {
         </motion.li>
         <motion.li
           variants={listVariant}
+          whileHover={{ scale: 1.02 }}
           className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg "
         >
           <FaRegCalendarAlt />
@@ -55,6 +58,7 @@ const Sidebar = () => {
         </motion.li>
         <motion.li
           variants={listVariant}
+          whileHover={{ scale: 1.02 }}
           className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg "
         >
           <FaRegTrashAlt />
