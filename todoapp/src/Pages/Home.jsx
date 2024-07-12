@@ -7,6 +7,9 @@ import { db } from "../../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useDispatch, useSelector } from "react-redux";
 import { addtodoshow, getfirsttodo } from "../Components/Slices/TodoDetail";
+import { motion } from "framer-motion";
+import { boxVariant, listVariant } from "../Components/constants/constants";
+
 const Home = () => {
   const { logout } = useAuthentication();
   const dispatch = useDispatch();
@@ -66,17 +69,20 @@ const Home = () => {
             <li>Board</li>
             <li>Completed</li>
           </ul>
-          <div className="bg-indigo-500 text-white p-1 rounded-lg px-2">
-            <button onClick={() => dispatch(addtodoshow(true))}>
+          <motion.div
+            whileTap={{ scale: 0.9 }}
+            className="bg-indigo-500 text-white p-1 rounded-lg px-2"
+          >
+            <motion.button onClick={() => dispatch(addtodoshow(true))}>
               New Task
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
-        <div className="flex flex-col gap-4 overflow-auto h-[25rem] no-scrollbar">
+        <motion.div className="flex flex-col gap-4 overflow-auto h-[25rem] no-scrollbar">
           {todos?.map((i, index) => {
             return <Todos text={i} key={index} />;
           })}
-        </div>
+        </motion.div>
       </div>
     </MainLayout>
   );

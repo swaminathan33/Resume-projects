@@ -7,6 +7,8 @@ import avatar from "../Assets/avatar-emoji.png";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RiProgress2Line, RiProgress5Line } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { boxVariant, listVariant } from "./constants/constants";
 
 const Sidebar = () => {
   const user = useSelector(({ authdetails }) => authdetails.user);
@@ -22,26 +24,43 @@ const Sidebar = () => {
         <img width={30} height={30} src={avatar} alt="" />
         <div className="text-sm">{user ? user?.name : "user323"}</div>
       </div>
-      <ul className="flex flex-col gap-3">
+      <motion.ul
+        variants={boxVariant}
+        animate="visible"
+        initial="hidden"
+        className="flex flex-col gap-3"
+      >
         <p className="text-zinc-400 text-sm">General</p>
         <Link to={"/"}>
-          <li className="flex items-center gap-3 pl-4  hover:bg-white p-2 rounded-lg ">
+          <motion.li
+            variants={listVariant}
+            className="flex items-center gap-3 pl-4  hover:bg-white p-2 rounded-lg "
+          >
             <LuListTodo /> <div className="">Todo</div>
-          </li>
+          </motion.li>
         </Link>
-        <li className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg ">
+        <motion.li
+          variants={listVariant}
+          className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg "
+        >
           <MdOutlineForwardToInbox />
           Inbox
-        </li>
-        <li className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg ">
+        </motion.li>
+        <motion.li
+          variants={listVariant}
+          className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg "
+        >
           <FaRegCalendarAlt />
           Calendar
-        </li>
-        <li className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg ">
+        </motion.li>
+        <motion.li
+          variants={listVariant}
+          className="flex items-center gap-3 pl-4 hover:bg-white p-2 rounded-lg "
+        >
           <FaRegTrashAlt />
           Trash
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
       <p className="text-zinc-400 text-sm">Task Progress</p>
       <ul className="flex flex-col gap-2 pl-4">
         <li className="flex items-center gap-4">

@@ -4,6 +4,7 @@ import { db } from "../../firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { addtodoshow } from "./Slices/TodoDetail";
 import { IoClose } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 const AddTodo = () => {
   const dispatch = useDispatch();
@@ -123,12 +124,13 @@ const AddTodo = () => {
           </div> */}
 
           <div>
-            <button
+            <motion.button
+              whileTap={{ scale: 0.9 }}
               className="bg-blue-700 p-1 rounded-lg mt-2 text-white"
               onClick={handleSubmit}
             >
               Submit
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

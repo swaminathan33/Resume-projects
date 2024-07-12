@@ -36,7 +36,7 @@ const TaskDetails = () => {
   return (
     <div className="m-2 fixed top-8">
       <div className="text-indigo-800 font-semibold text-xl">Task Details</div>
-      <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3">
+      <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3 shadow-xl">
         <p className="text-xs text-gray-500">My Work Task</p>
         <div className="text-lg my-2 font-medium">{task?.todo}</div>
         <p className="text-xs">{task?.description}</p>
