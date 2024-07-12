@@ -32,6 +32,7 @@ const AddTodo = () => {
       time: input.time,
       uid: user.uid,
       assignee: input.assignee,
+      completed: false,
     });
     dispatch(addtodoshow(false));
     setInput("");

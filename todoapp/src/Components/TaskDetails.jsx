@@ -2,28 +2,63 @@ import React, { useEffect, useState } from "react";
 import Comments from "./Comments";
 import { FaRegComments } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { collection, doc, getDoc, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  query,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 import { db } from "../../firebase";
 import { PiArrowSquareDownFill } from "react-icons/pi";
 import { IoClose } from "react-icons/io5";
-import { taskshow } from "./Slices/TodoDetail";
+import { completedtodo, taskshow } from "./Slices/TodoDetail";
+import {
+  MdOutlineCheckBox,
+  MdOutlineCheckBoxOutlineBlank,
+} from "react-icons/md";
 
 const TaskDetails = () => {
   const dispatch = useDispatch();
+  // const [selectedTodo, setSelectedTodo] = useState([]);
+  const completedtodovar = useSelector(
+    ({ todoDetail }) => todoDetail.todoDetail.completedtodo
+  );
   const taskshowvar = useSelector(
     ({ todoDetail }) => todoDetail.todoDetail.taskshow
   );
   const taskId = useSelector(
     ({ todoDetail }) => todoDetail.todoDetail.taskDetailId
   );
+  const selectedtodo = useSelector(
+    ({ todoDetail }) => todoDetail.todoDetail.selectedtodo
+  );
   const [task, setTask] = useState({});
+  // const [completed, setCompleted] = useState(task.completed);
+
+  // console.log(task);
 
   const getTodo = async (id) => {
     try {
-      const t = await getDoc(doc(db, "todos", id));
+      let t = await getDoc(doc(db, "todos", id));
+      // setSelectedTodo(k.data);
       setTask(t.data());
     } catch (err) {}
   };
+
+  useEffect(() => {
+    try {
+      const colRef = collection(db, "todos");
+      const todoRef = doc(colRef, selectedtodo);
+      updateDoc(todoRef, {
+        completed: !task.completed,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }, [completedtodovar]);
 
   useEffect(() => {
     onSnapshot(collection(db, "todos"), (snapshot) => {
@@ -45,15 +80,27 @@ const TaskDetails = () => {
         taskshowvar ? "" : "hidden"
       }`}
     >
-      <div className="text-indigo-800 font-semibold text-xl max-sm:flex justify-between">
+      <div className="text-indigo-800 font-semibold text-xl max-sm:flex justify-between max-sm:mx-5">
         <span>Task Details</span>
         <IoClose
-          className="text-xl"
+          className="text-xl hidden max-sm:block"
           onClick={() => dispatch(taskshow(false))}
         />
       </div>
       <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3 shadow-xl">
-        <p className="text-xs text-gray-500">My Work Task</p>
+        <p className="text-sm text-gray-500 flex justify-between">
+          <span>My Work Task</span>
+          <div
+            className=""
+            onClick={() => dispatch(completedtodo(!completedtodovar))}
+          >
+            {task.completed ? (
+              <MdOutlineCheckBox />
+            ) : (
+              <MdOutlineCheckBoxOutlineBlank />
+            )}
+          </div>
+        </p>
         <div className="text-lg my-2 font-medium">{task?.todo}</div>
         <p className="text-xs">{task?.description}</p>
         <ul className="flex flex-col mt-4 gap-3">

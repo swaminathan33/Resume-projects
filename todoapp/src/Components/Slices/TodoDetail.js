@@ -7,6 +7,8 @@ const initialState = {
     firstTodoId: '',
     sidebarshow:false,
     taskshow:false,
+    completedtodo:false,
+    selectedtodo:'',
   },
 };
 
@@ -28,10 +30,16 @@ export const todoDetail = createSlice({
     },
     taskshow:(state, action) =>{
       state.todoDetail.taskshow = action.payload;
+    },
+    completedtodo:(state, action) =>{
+      state.todoDetail.completedtodo = action.payload;
+    },
+    selectedtodo:(state, action) =>{
+      state.todoDetail.selectedtodo = action.payload;
     }
   },
 });
 
-export const { addtodoshow, taskdetailid, getfirsttodo, sidebarshow, taskshow } = todoDetail.actions;
+export const { addtodoshow, taskdetailid, getfirsttodo, sidebarshow, taskshow, completedtodo, selectedtodo } = todoDetail.actions;
 
 export default todoDetail.reducer;

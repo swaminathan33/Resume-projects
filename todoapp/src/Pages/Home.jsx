@@ -34,13 +34,13 @@ const Home = () => {
         const user_data = snapshot.docs.filter((doc) => {
           return doc.data()?.uid == user.uid;
         });
-
         setTodos(
           user_data.map((i) => ({
             id: i.id,
             todo: i.data(),
           }))
         );
+        // console.log(todos);
         // setTodos(
         //   snapshot.docs.map((doc) => ({
         //     id: doc.id,
@@ -101,7 +101,8 @@ const Home = () => {
               return (
                 <motion.li
                   className="list-none"
-                  // variants={listVariant}
+                  variants={listVariant}
+                  // custom={i}
                   // exit={{ scale: 1.1, x: 500, opacity: 0 }}
                   // whileHover={{ scale: 1.1 }}
                   key={index}
