@@ -71,6 +71,7 @@ const TaskDetails = () => {
       }));
       getTodo(k[0].id);
     });
+    console.log(task);
   }, []);
 
   useEffect(() => {
@@ -97,7 +98,7 @@ const TaskDetails = () => {
             className=""
             onClick={() => dispatch(completedtodo(!completedtodovar))}
           >
-            {task.completed ? (
+            {task.completed != undefined && task.completed ? (
               <MdOutlineCheckBox />
             ) : (
               <MdOutlineCheckBoxOutlineBlank />
