@@ -22,7 +22,7 @@ const Sidebar = () => {
     navigate("/login");
   };
   return (
-    <div className="bg-gray-200 h-screen p-4 text-zinc-600 flex flex-col gap-7 pt-8 sticky top-0">
+    <div className="bg-gray-200 h-screen p-4 text-zinc-600 flex flex-col gap-7 pt-8 sticky top-0 dark:bg-gray-800 shadow-xl dark:text-slate-300">
       <div className="top flex items-center max-sm:justify-between">
         <img
           width={30}

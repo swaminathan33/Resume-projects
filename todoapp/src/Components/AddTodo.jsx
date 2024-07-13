@@ -40,12 +40,12 @@ const AddTodo = () => {
 
   return (
     <div className={`max-sm:`}>
-      <div className="m-2 fixed top-8 w-[25rem] max-sm:w-[22rem] bg-white">
-        <div className="text-indigo-800 font-semibold text-xl max-sm:flex justify-between">
+      <div className="m-2 fixed top-8 w-[25rem] max-sm:w-[22rem] bg-white dark:bg-gray-800 max-sm:pb-20 ">
+        <div className="text-indigo-800 font-semibold text-xl max-sm:flex justify-between dark:text-slate-300">
           <span>New Task</span>
           {/* <IoClose /> */}
         </div>
-        <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3">
+        <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3 dark:text-slate-300">
           <button
             onClick={() => dispatch(addtodoshow(false))}
             className="flex justify-end w-full text-xl"
@@ -60,7 +60,7 @@ const AddTodo = () => {
               onChange={(e) =>
                 setInput((t) => ({ ...t, [e.target.name]: e.target.value }))
               }
-              className="bg-gray-200 rounded-md mt-1 h-8 w-5/6 outline-none"
+              className="bg-gray-200 dark:bg-zinc-600 rounded-md mt-1 h-8 w-5/6 outline-none"
               type="text"
             />
           </div>
@@ -73,7 +73,7 @@ const AddTodo = () => {
               onChange={(e) =>
                 setInput((t) => ({ ...t, [e.target.name]: e.target.value }))
               }
-              className="bg-gray-200 rounded-md mt-1 h-14 text-sm w-5/6 outline-none"
+              className="bg-gray-200 dark:bg-zinc-600 rounded-md mt-1 h-14 text-sm w-5/6 outline-none"
               type="text"
             />
           </div>
@@ -86,7 +86,7 @@ const AddTodo = () => {
               onChange={(e) =>
                 setInput((t) => ({ ...t, [e.target.name]: e.target.value }))
               }
-              className="bg-gray-200 rounded-md mt-1 h-8 w-5/6 outline-none"
+              className="bg-gray-200 dark:bg-zinc-600 rounded-md mt-1 h-8 w-5/6 outline-none"
               type="date"
             />
           </div>
@@ -99,7 +99,7 @@ const AddTodo = () => {
               onChange={(e) =>
                 setInput((t) => ({ ...t, [e.target.name]: e.target.value }))
               }
-              className="bg-gray-200 rounded-md mt-1 h-8 w-5/6 outline-none"
+              className="bg-gray-200 dark:bg-zinc-600 rounded-md mt-1 h-8 w-5/6 outline-none"
               type="time"
             />
           </div>
@@ -112,7 +112,7 @@ const AddTodo = () => {
               onChange={(e) =>
                 setInput((t) => ({ ...t, [e.target.name]: e.target.value }))
               }
-              className="bg-gray-200 rounded-md mt-1 h-8 w-5/6 outline-none"
+              className="bg-gray-200 dark:bg-zinc-600 rounded-md mt-1 h-8 w-5/6 outline-none"
               type="text"
             />
           </div>

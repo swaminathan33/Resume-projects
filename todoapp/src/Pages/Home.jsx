@@ -66,7 +66,7 @@ const Home = () => {
   }, []);
   return (
     <MainLayout>
-      <motion.div className="text-indigo-800 font-semibold pt-10 mx-5 overflow-hidden h-screen">
+      <motion.div className="text-indigo-800 font-semibold pt-10 mx-5 overflow-hidden h-screen dark:text-slate-300">
         <h2 className="text-2xl">Todo</h2>
         <div className="date mt-6 font-bold max-sm:flex items-center justify-between">
           Today, {currentDate && currentDate}

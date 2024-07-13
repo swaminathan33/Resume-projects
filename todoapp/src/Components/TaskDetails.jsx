@@ -19,6 +19,8 @@ import {
   MdOutlineCheckBox,
   MdOutlineCheckBoxOutlineBlank,
 } from "react-icons/md";
+import { motion } from "framer-motion";
+import { boxVariant, listVariant } from "./constants/constants";
 
 const TaskDetails = () => {
   const dispatch = useDispatch();
@@ -45,6 +47,7 @@ const TaskDetails = () => {
       let t = await getDoc(doc(db, "todos", id));
       // setSelectedTodo(k.data);
       setTask(t.data());
+      console.log("showing", task);
     } catch (err) {}
   };
 
@@ -76,18 +79,18 @@ const TaskDetails = () => {
 
   return (
     <div
-      className={`m-2 fixed top-8 bg-white max-sm:${
+      className={`m-2 dark:bg-gray-800 fixed top-8 bg-white max-sm:${
         taskshowvar ? "" : "hidden"
       }`}
     >
-      <div className="text-indigo-800 font-semibold text-xl max-sm:flex justify-between max-sm:mx-5">
+      <div className="text-indigo-800 dark:text-white  font-semibold text-xl max-sm:flex justify-between max-sm:mx-5">
         <span>Task Details</span>
         <IoClose
           className="text-xl hidden max-sm:block"
           onClick={() => dispatch(taskshow(false))}
         />
       </div>
-      <div className="border-2 p-3 rounded-xl text-indigo-900 font-semibold mt-3 shadow-xl">
+      <div className="border-2 p-3 rounded-xl text-indigo-900 dark:text-white font-semibold mt-3 shadow-xl ">
         <p className="text-sm text-gray-500 flex justify-between">
           <span>My Work Task</span>
           <div
@@ -101,45 +104,52 @@ const TaskDetails = () => {
             )}
           </div>
         </p>
-        <div className="text-lg my-2 font-medium">{task?.todo}</div>
+        <div className="text-lg my-2 font-medium dark:text-white">
+          {task?.todo}
+        </div>
         <p className="text-xs">{task?.description}</p>
-        <ul className="flex flex-col mt-4 gap-3">
-          <li className="flex gap-5 ">
+        <motion.ul
+          variants={boxVariant}
+          animate="visible"
+          initial="hidden"
+          className="flex flex-col mt-4 gap-3"
+        >
+          <motion.li variants={listVariant} className="flex gap-5 ">
             <div className="text-sm text-gray-500">Timeline</div>
             <div className="text-sm">{task?.date}</div>
-          </li>
-          <li className="flex gap-11 ">
+          </motion.li>
+          <motion.li variants={listVariant} className="flex gap-11 ">
             <div className="text-sm text-gray-500">Time</div>
             <div className="text-sm">{task?.time}</div>
-          </li>
-          <li className="flex gap-4 ">
+          </motion.li>
+          <motion.li variants={listVariant} className="flex gap-4 ">
             <div className="text-sm text-gray-500">Assignee</div>
             <div className="text-sm">{task?.assignee}</div>
-          </li>
-          <li className="flex gap-12 ">
+          </motion.li>
+          <motion.li variants={listVariant} className="flex gap-12 ">
             <div className="text-sm text-gray-500">Type</div>
             <div className="text-sm">Daily Task</div>
-          </li>
-        </ul>
-        <div className="attachment mt-4">
+          </motion.li>
+        </motion.ul>
+        <div className="attachment mt-4 ">
           <div className="mb-3">Attachment</div>
-          <ul className="flex gap-4">
+          <ul className="flex gap-4 ">
             <li className="text-sm border-2 p-3 rounded-xl">
-              <div className="text-black">Ragazo.xml</div>
+              <div className="text-black dark:text-white">Ragazo.xml</div>
               <div className="text-xs text-gray-400">19 April 2002</div>
             </li>
             <li className="text-sm border-2 p-3 rounded-xl">
-              <div className="text-black">Ragazo.xml</div>
+              <div className="text-black dark:text-white">Ragazo.xml</div>
               <div className="text-xs text-gray-400">19 April 2002</div>
             </li>
             <li className="text-sm border-2 p-3 rounded-xl">
-              <div className="text-black">Ragazo.xml</div>
-              <div className="text-xs text-gray-400">19 April 2002</div>
+              <div className="text-black dark:text-white">Ragazo.xml</div>
+              <div className="text-xs text-gray-600">19 April 2002</div>
             </li>
           </ul>
         </div>
         <div className="comments">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 dark:text-black">
             <FaRegComments />
             <h2>Comments</h2>
           </div>
