@@ -1,10 +1,10 @@
-☐ Todo App @started(24-07-06 05:25)
+✔ Todo App @started(24-07-06 05:25) @done(24-07-13 06:10) @lasted(1w45m22s)
 
 
 ✔ add firebase authentication @done(24-07-12 02:37)
 ✔ add firebase database @done(24-07-12 02:37)
-☐ framer motion animation
-☐ dark mode
+✔ framer motion animation @done(24-07-13 06:10)
+✔ dark mode @done(24-07-13 06:10)
 ✔ use redux @done(24-07-12 02:37)
 ☐ responsiveness
 
