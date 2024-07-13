@@ -21,6 +21,10 @@ const Sidebar = () => {
     localStorage.removeItem("authUser");
     navigate("/login");
   };
+
+  const handleDarkmode = (mode) => {
+    document.body.className = `${mode} dark:bg-gray-800`;
+  };
   return (
     <div className="bg-gray-200 h-screen p-4 text-zinc-600 flex flex-col gap-7 pt-8 sticky top-0 dark:bg-gray-800 shadow-xl dark:text-slate-300">
       <div className="top flex items-center max-sm:justify-between">
@@ -92,6 +96,18 @@ const Sidebar = () => {
         className="bg-red-400 text-center text-white font-bold rounded-lg cursor-pointer py-1"
       >
         LogOut
+      </button>
+      <button
+        onClick={() => handleDarkmode("dark")}
+        className="block dark:hidden bg-gray-800 text-center text-white font-bold rounded-lg cursor-pointer py-1"
+      >
+        DarkMode
+      </button>
+      <button
+        onClick={handleDarkmode}
+        className="hidden bg-gray-200 dark:block text-center text-gray-800 font-bold rounded-lg cursor-pointer py-1"
+      >
+        LightMode
       </button>
     </div>
   );

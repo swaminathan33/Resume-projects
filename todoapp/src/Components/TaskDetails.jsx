@@ -149,9 +149,9 @@ const TaskDetails = () => {
           </ul>
         </div>
         <div className="comments">
-          <div className="flex items-center gap-2 dark:text-black">
+          <div className="flex items-center gap-2 ">
             <FaRegComments />
-            <h2>Comments</h2>
+            <h2 className="dark:text-white">Comments</h2>
           </div>
           <Comments />
         </div>
