@@ -96,22 +96,20 @@ const Home = () => {
           initial="hidden"
           className="flex flex-col gap-4 overflow-auto h-[25rem]  no-scrollbar"
         >
-          <AnimatePresence>
-            {todos?.map((i, index) => {
-              return (
-                <motion.li
-                  className="list-none"
-                  variants={listVariant}
-                  // custom={i}
-                  // exit={{ scale: 1.1, x: 500, opacity: 0 }}
-                  // whileHover={{ scale: 1.1 }}
-                  key={index}
-                >
-                  <Todos text={i} key={index} />
-                </motion.li>
-              );
-            })}
-          </AnimatePresence>
+          {todos?.map((i, index) => {
+            return (
+              <motion.li
+                className="list-none"
+                variants={listVariant}
+                // custom={i}
+                // exit={{ scale: 1.1, x: 500, opacity: 0 }}
+                // whileHover={{ scale: 1.1 }}
+                key={index}
+              >
+                <Todos text={i} key={index} />
+              </motion.li>
+            );
+          })}
         </motion.div>
       </motion.div>
     </MainLayout>

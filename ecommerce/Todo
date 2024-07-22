@@ -1,0 +1,16 @@
+☐ Ecommerce app @started(24-07-14 06:11)
+
+☐ add redux
+☐ add firebase db and authenticate
+☐ add framer motion
+☐ should able to add items in cart 
+☐ payment page -> cash on delivery (only available)
+☐ home add somethings like trending / featured products to make the page looks longers
+
+👉 Error
+☐ In products page, after refresh "items" usestate needs another render to show the items.
+☐ In Product page, if you click "add cart" button twice it create a error in cart page
+
+design -> https://www.behance.net/gallery/198619813/E-Commerce-Furniture-Store-Full-Website-Design?tracking_source=search_projects|e-commerce+website+design&l=2
+
+

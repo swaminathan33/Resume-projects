@@ -5,8 +5,9 @@ export const boxVariant = {
     visible:{
         opacity:1,
         transition:{
-            delay:0.7,
-            when:"beforeChildren",
+            // delay:0.7,
+            // when:"beforeChildren",
+            delayChildren:0,
             staggerChildren:0.3
         }
     }

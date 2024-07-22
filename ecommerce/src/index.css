@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.large{
+    width: 400px;
+    transition: width 2s;
+}
+
+.small{
+    width: 60px;
+    transition: width 2s;
+}
+
