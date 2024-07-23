@@ -3,7 +3,8 @@ import Product from "./Product";
 import axios from "axios";
 import { HiOutlineArrowLongLeft } from "react-icons/hi2";
 import { HiOutlineArrowLongRight } from "react-icons/hi2";
-
+import { AnimatePresence, delay, motion } from "framer-motion";
+import { boxVariant, listVariant } from "./constants/animate";
 const Pagination = ({ items, itemsIterate, setItemsIterate, setItems }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const postPerPage = 20;
@@ -49,21 +50,28 @@ const Pagination = ({ items, itemsIterate, setItemsIterate, setItems }) => {
 
   return (
     <div>
-      <div className="products col-span-3 flex-wrap flex justify-between">
+      <motion.div
+        variants={boxVariant}
+        initial="hidden"
+        animate="visible"
+        className="products col-span-3 flex-wrap flex justify-between"
+      >
         {items
           ? currentPosts.map((i, index) => {
               return (
-                <Product
-                  item={i}
-                  key={index}
-                  link={i.images[0]}
-                  name={i.title}
-                  price={i.price}
-                />
+                <motion.div variants={listVariant} key={i.id}>
+                  <Product
+                    item={i}
+                    key={i.id}
+                    link={i.images[0]}
+                    name={i.title}
+                    price={i.price}
+                  />
+                </motion.div>
               );
             })
           : ""}
-      </div>
+      </motion.div>
       <div className="flex gap-8 justify-end mb-10 mt-5">
         <button
           className="border-[1px] px-5 rounded-full"

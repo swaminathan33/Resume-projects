@@ -7,6 +7,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import { auth } from "../../firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { motion } from "framer-motion";
 
 const Product = ({ link, name, price, item }) => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ const Product = ({ link, name, price, item }) => {
   };
 
   return (
-    <div className="w-56 max-sm:w-full max-sm:mb-10 mb-5">
+    <motion.div className="w-56 max-sm:w-full max-sm:mb-10 mb-5">
       <div className="bg-gray-100 flex items-center rounded-xl justify-center relative">
         <div className="absolute top-4 right-4 bg-white rounded-full p-1">
           <CiHeart fontSize={20} />
@@ -45,16 +46,19 @@ const Product = ({ link, name, price, item }) => {
           <div className="name">{name}</div>
           <div className="price text-gray-900">${price}</div>
         </div>
-        <div
+        <motion.div
+          whileTap={{
+            scale: 0.85,
+          }}
           className="bg-yellow-500 p-3 rounded-full mt-1"
           onClick={() => handleCart(item)}
         >
-          <div>
+          <motion.div>
             <FaCartArrowDown color="white" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

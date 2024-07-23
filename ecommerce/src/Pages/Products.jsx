@@ -255,7 +255,8 @@ const Products = () => {
                       return (
                         <li
                           key={index}
-                          className={`border-[1px] w-full text-md p-1 rounded-full text-center flex items-center gap-2 ${
+                          onClick={() => handleStock(i)}
+                          className={`border-[1px] w-full cursor-pointer text-md p-1 rounded-full text-center flex items-center gap-2 ${
                             clickedStock == i ? "" : ""
                           }`}
                         >
@@ -273,7 +274,6 @@ const Products = () => {
                             className={`${
                               clickedStock == i && "text-orange-400"
                             }`}
-                            onClick={() => handleStock(i)}
                           >
                             {i}
                           </button>

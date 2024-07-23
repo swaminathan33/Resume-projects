@@ -8,6 +8,7 @@ import { RxCross2 } from "react-icons/rx";
 import { removeCart, setCart } from "../Components/Slices/reducers/CartDetails";
 import { Link } from "react-router-dom";
 import { auth, db } from "../../firebase";
+import { motion } from "framer-motion";
 import {
   onSnapshot,
   collection,
