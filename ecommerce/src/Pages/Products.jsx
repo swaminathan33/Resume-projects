@@ -26,7 +26,7 @@ const Products = () => {
   const [openStatus, setOpenStatus] = useState(true);
 
   let [itemsIterate, setItemsIterate] = useState([]);
-  const [clickedCategory, setClickedCategory] = useState("all");
+  const [clickedCategory, setClickedCategory] = useState("");
   const [category, setCategory] = useState([
     "fragrances",
     "furniture",

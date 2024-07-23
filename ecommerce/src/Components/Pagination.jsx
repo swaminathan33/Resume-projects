@@ -105,8 +105,8 @@ const Pagination = ({ items, itemsIterate, setItemsIterate, setItems }) => {
           </div>
         </button>
       </div>
-      <div className="text-center font-bold">
-        Select a category to start your purchase
+      <div className="text-center font-bold font-serif">
+        Select a Category to start your Shopping
       </div>
     </div>
   );
