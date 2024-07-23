@@ -68,7 +68,7 @@ const Login = () => {
         </button>
       </div>
       <div className="text-sm">
-        New To LinkedIn?{" "}
+        New To Website?{" "}
         <Link to={"/register"} className="font-semibold text-blue-600">
           Join Now
         </Link>

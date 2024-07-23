@@ -28,12 +28,12 @@ const Cart = () => {
   let quantity = [];
   const dispatch = useDispatch();
   const cartArray = Object.entries(cart)[0][1];
-  const handleCart = (id, firebase_id) => {
+  const handleCart = async (id, firebase_id) => {
+    await deleteDoc(doc(db, "cart", firebase_id));
+    window.location.reload();
     const newCart = cartArray.filter((i) => i.id !== id);
     console.log(newCart);
     dispatch(removeCart(newCart));
-    deleteDoc(doc(db, "cart", firebase_id));
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -200,7 +200,7 @@ const Cart = () => {
               <div>Total</div>
               <div>{Math.ceil(subTotal)}.00</div>
             </li>
-            <li className="flex justify-between gap-20 p-2 px-5 py-2">
+            <li className="flex justify-between gap-20 p-2 px-5 py-2  w-full">
               <Link to={"/checkout"}>
                 <button className="px-5 w-full py-2 bg-yellow-500 rounded-full text-white">
                   Proceed To Checkout
