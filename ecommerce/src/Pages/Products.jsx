@@ -18,7 +18,7 @@ import { FiTruck } from "react-icons/fi";
 const Products = () => {
   const itemRef = useRef([]);
   const [items, setItems] = useState(itemRef.current);
-  console.log("hi", items);
+  // console.log("hi", items);
   const [priceRange, setPriceRange] = useState(2500);
   const [clickedStock, setClickedStock] = useState("In Stock");
   const [openCategory, setOpenCategory] = useState(true);
@@ -119,7 +119,7 @@ const Products = () => {
       setItemsIterate(itemRef.current);
     };
     getItems();
-    console.log("redering");
+    // console.log("redering");
   }, []);
 
   return (

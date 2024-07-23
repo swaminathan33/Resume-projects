@@ -54,7 +54,7 @@ const Pagination = ({ items, itemsIterate, setItemsIterate, setItems }) => {
         variants={boxVariant}
         initial="hidden"
         animate="visible"
-        className="products col-span-3 flex-wrap flex justify-between"
+        className="products col-span-3 flex-wrap flex justify-between max-sm:justify-center"
       >
         {items
           ? currentPosts.map((i, index) => {
@@ -82,9 +82,10 @@ const Pagination = ({ items, itemsIterate, setItemsIterate, setItems }) => {
             <div>Previous</div>
           </div>
         </button>
-        {paginationNumbers.map((i) => {
+        {paginationNumbers.map((i, index) => {
           return (
             <button
+              key={index}
               className={` w-10 h-10 rounded-full  ${
                 currentPage == i ? " bg-gray-100 text-orange-400" : ""
               }`}

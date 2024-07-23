@@ -33,7 +33,7 @@ const Cart = () => {
     await deleteDoc(doc(db, "cart", firebase_id));
     window.location.reload();
     const newCart = cartArray.filter((i) => i.id !== id);
-    console.log(newCart);
+    // console.log(newCart);
     dispatch(removeCart(newCart));
   };
 
@@ -42,7 +42,7 @@ const Cart = () => {
     cartArray.map((i) => {
       setSubTotal((subTotal) => i.price + subTotal);
     });
-    console.log(setSubTotal);
+    // console.log(setSubTotal);
   }, [cartArray]);
 
   useEffect(() => {

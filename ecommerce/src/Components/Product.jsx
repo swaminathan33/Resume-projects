@@ -29,12 +29,16 @@ const Product = ({ link, name, price, item }) => {
       },
       uid: uid,
     };
-    console.log("hi");
+    // console.log("hi");
     addDoc(collection(db, "cart"), cartItem);
   };
 
   return (
-    <motion.div className="w-56 max-sm:w-full max-sm:mb-10 mb-5">
+    <motion.div
+      className="w-56 max-sm:w-72 max-sm:mb-10 mb-5"
+      initial={{ scale: 0.5 }}
+      whileInView={{ scale: 1 }}
+    >
       <div className="bg-gray-100 flex items-center rounded-xl justify-center relative">
         <div className="absolute top-4 right-4 bg-white rounded-full p-1">
           <CiHeart fontSize={20} />
