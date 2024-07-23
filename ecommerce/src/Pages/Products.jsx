@@ -111,7 +111,7 @@ const Products = () => {
         .then((res) => {
           setItems(res.data.products);
           itemRef.current = res.data.products;
-          console.log(itemRef.current, items);
+          // console.log(itemRef.current, items);
         })
         .catch((err) => {
           console.log(err);
@@ -175,9 +175,10 @@ const Products = () => {
                     </button>
                   </li>
 
-                  {category.map((i) => {
+                  {category.map((i, index) => {
                     return (
                       <li
+                        key={index}
                         className={`border-[1px] cursor-pointer w-full text-md p-1 rounded-full text-center flex items-center gap-2 ${
                           clickedCategory == i ? "" : ""
                         }`}
@@ -314,9 +315,12 @@ const Products = () => {
         <MainLayout>
           <div>
             <ul className="flex justify-between my-20">
-              {contents.map((i) => {
+              {contents.map((i, index) => {
                 return (
-                  <li className="flex relative flex-col items-center z-40">
+                  <li
+                    key={index}
+                    className="flex relative flex-col items-center z-40"
+                  >
                     <div
                       className={`absolute p-2 bg-slate-200 rounded-full w-8 h-8 ${i.styles}`}
                     ></div>
