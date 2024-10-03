@@ -4,6 +4,7 @@ import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import CodeChallenge from "./CodeChallenge";
+import Blogs from "./Blogs";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Skills /> */}
       <Projects />
       <CodeChallenge />
+      <Blogs />
     </div>
   );
 };
