@@ -9,6 +9,7 @@ import Typed from "typed.js";
 import links from "./constants/nav";
 import { Link } from "react-scroll";
 import { useGlobalStandardContext } from "./contexts/StandardContext";
+import { social_links } from "./constants/nav";
 
 const HeroSection = () => {
   const el = useRef(null);
@@ -29,7 +30,7 @@ const HeroSection = () => {
       <ParticlesComponent />
       {/* <Navbar /> */}
       {navShow ? (
-        <div className="block sm:hidden p-10 bg-indigo-950 absolute top-15 right-0 text-white h-screen z-40 w-4/6">
+        <div className="block sm:hidden p-10 bg-indigo-950 absolute top-15 right-0 text-white h-screen z-10 w-4/6">
           {links.map((i) => {
             return (
               <li className="list-none p-2 font-semibold py-4 hover:border-b-4 hover:border-blue-700 border-transparent">
@@ -72,11 +73,13 @@ const HeroSection = () => {
           </div>
           <div className="links">
             <ul className="flex gap-4">
-              {[1, 2, 3, 4].map((i) => {
+              {social_links.map((i) => {
                 return (
-                  <li className="bg-blue-950 p-3 rounded-full">
-                    <SiInstagram color="lightblue" fontSize={20} />
-                  </li>
+                  <a href={i.url} target="_blank">
+                    <li className="bg-blue-950 p-3 rounded-full">
+                      <i.icon color="lightblue" fontSize={20} />
+                    </li>
+                  </a>
                 );
               })}
             </ul>
