@@ -9,29 +9,30 @@ export const links = [
       id: "app",
     },
     {
-      name: "About",
-      id: "/",
-    },
-    {
-      name: "Skills",
-      id: "/",
-    },
-    {
-      name: "Education",
-      id: "/",
-    },
-    {
       name: "Projects",
       id: "projects",
     },
     {
-      name: "Experience",
-      id: "/",
+      name: "Coding Challenges",
+      id: "challenges",
     },
-    {
-      name: "Contact",
-      id: "/",
-    },
+    // {
+    //   name: "Skills",
+    //   id: "/",
+    // },
+    // {
+    //   name: "Education",
+    //   id: "/",
+    // },
+    
+    // {
+    //   name: "Experience",
+    //   id: "/",
+    // },
+    // {
+    //   name: "Contact",
+    //   id: "/",
+    // },
   ]
 
 export const social_links = [
