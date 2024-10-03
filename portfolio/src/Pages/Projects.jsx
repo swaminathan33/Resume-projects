@@ -23,7 +23,7 @@ const Projects = () => {
         </span>
         <span>Projects Made</span>
       </div>
-      <div className="flex flex-wrap gap-4 justify-center px-20">
+      <div className="flex-col sm:flex-row flex flex-wrap gap-10 justify-center sm:px-20 px-8">
         {/* {[1, 2, 3, 4, 5, 6].map((i) => {
           return (
             <Tilt>
@@ -43,7 +43,7 @@ const Projects = () => {
                 <div className="">
                   <img
                     src={i.image}
-                    className=" w-80 h-52 rounded-t-md"
+                    className=" w-full h-52 rounded-t-md"
                     alt=""
                   />
                   <div className="bg-yellow-400 font-bold text-lg p-2 rounded-b-md">

@@ -1,40 +1,16 @@
 import React from "react";
 import { FaNodeJs } from "react-icons/fa";
 // import { Link } from "react-router-dom";
+import { FiMenu } from "react-icons/fi";
 import { Link } from "react-scroll";
+import links from "./constants/nav";
+import { useGlobalStandardContext } from "./contexts/StandardContext";
+import { RxCross2 } from "react-icons/rx";
+
 const Navbar = () => {
-  const links = [
-    {
-      name: "Home",
-      id: "app",
-    },
-    {
-      name: "About",
-      id: "/",
-    },
-    {
-      name: "Skills",
-      id: "/",
-    },
-    {
-      name: "Education",
-      id: "/",
-    },
-    {
-      name: "Projects",
-      id: "projects",
-    },
-    {
-      name: "Experience",
-      id: "/",
-    },
-    {
-      name: "Contact",
-      id: "/",
-    },
-  ];
+  let { navShow, setNavShow } = useGlobalStandardContext();
   return (
-    <div className="flex sticky top-0 z-20 bg-gray-100 justify-between px-20 p-4">
+    <div className="flex sticky top-0 z-20 bg-gray-100 justify-between sm:px-20 p-4">
       <div className="first flex items-center gap-1 text-xl">
         <div className="logo">
           <FaNodeJs />
@@ -42,7 +18,7 @@ const Navbar = () => {
         <div className="name font-bold text-indigo-950">Swami</div>
       </div>
       <div>
-        <ul className="flex gap-10 font-semibold text-lg">
+        <ul className="hidden sm:flex gap-10 font-semibold text-lg">
           {links.map((i) => {
             return (
               <li className="hover:text-blue-700 border-b-2 border-transparent hover:border-blue-700 hover:cursor-pointer">
@@ -60,6 +36,9 @@ const Navbar = () => {
             );
           })}
         </ul>
+      </div>
+      <div className="flex sm:hidden" onClick={() => setNavShow(!navShow)}>
+        {navShow ? <RxCross2 fontSize={30} /> : <FiMenu fontSize={30} />}
       </div>
     </div>
   );

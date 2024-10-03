@@ -6,9 +6,13 @@ import Avatar from "../Assets/avatar.png";
 import Hacker from "../Assets/hacker.png";
 import { ParticlesComponent } from "./ParticlesComponent";
 import Typed from "typed.js";
+import links from "./constants/nav";
+import { Link } from "react-scroll";
+import { useGlobalStandardContext } from "./contexts/StandardContext";
 
 const HeroSection = () => {
   const el = useRef(null);
+  let { navShow, setNavShow } = useGlobalStandardContext();
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -24,13 +28,38 @@ const HeroSection = () => {
     <div id="hero">
       <ParticlesComponent />
       {/* <Navbar /> */}
-      <div className="flex justify-around  h-screen items-center z-40">
-        <div className="text flex flex-col gap-5">
-          <div className="text-5xl font-bold text-blue-950">Hi There,</div>
-          <div className="text-5xl font-bold text-blue-950">
+      {navShow ? (
+        <div className="block sm:hidden p-10 bg-indigo-950 absolute top-15 right-0 text-white h-screen z-40 w-4/6">
+          {links.map((i) => {
+            return (
+              <li className="list-none p-2 font-semibold py-4 hover:border-b-4 hover:border-blue-700 border-transparent">
+                <Link
+                  activeClass="active"
+                  to={i.id}
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={400}
+                >
+                  {i.name}
+                </Link>
+              </li>
+            );
+          })}
+        </div>
+      ) : (
+        ""
+      )}
+      {/* <Navbar /> */}
+      <div className="flex flex-col sm:flex-row sm:px-40 justify-around  h-screen items-center z-40">
+        <div className="text flex flex-col gap-5 w-full px-2 sm:px-0">
+          <div className="text-4xl sm:text-5xl font-bold text-blue-950">
+            Hi There,
+          </div>
+          <div className="text-4xl sm:text-5xl font-bold text-blue-950">
             I'm Swami <span className="text-orange-500">Nathan</span>
           </div>
-          <div className="text-2xl font-bold text-blue-950">
+          <div className="text-xl sm:text-2xl font-bold text-blue-950">
             <span>I am Into </span>
             <span className="text-red-500" ref={el}></span>
           </div>
@@ -54,9 +83,9 @@ const HeroSection = () => {
           </div>
         </div>
         <Tilt>
-          <div className="image shadow-2xl bg-yellow-400 w-72 h-72 rounded-full flex items-center justify-center overflow-hidden">
+          <div className="image shadow-2xl bg-yellow-400 w-80 h-80 rounded-full flex items-center justify-center overflow-hidden">
             <div className="mt-10">
-              <img src={Hacker} width={250} alt="" />
+              <img src={Hacker} width={280} alt="" />
             </div>
           </div>
         </Tilt>
