@@ -16,6 +16,10 @@ export const links = [
       name: "Coding Challenges",
       id: "challenges",
     },
+        {
+      name: "Blogs",
+      id: "blogs",
+    },
     // {
     //   name: "Skills",
     //   id: "/",

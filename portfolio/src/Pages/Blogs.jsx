@@ -24,7 +24,7 @@ const Blogs = () => {
     },
   ];
   return (
-    <div className="bg-blue-900 py-7 " id="projects">
+    <div className="bg-blue-900 py-7 " id="blogs">
       <div className="text-white flex items-center gap-3 justify-center font-bold text-3xl py-3 pb-10">
         <span>
           <GrArticle fontSize={37} />
